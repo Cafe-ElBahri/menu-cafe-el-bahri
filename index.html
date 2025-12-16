@@ -1,0 +1,4059 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Café El Bahri</title>
+<link rel="icon" type=“image/png” sizes="512x512" href=logobahri.png> 
+<style>
+  @font-face {
+    font-family: 'Dubai';
+    src: url('https://assets.menutech.com/fonts/webapp/dubai-regular.woff2') format('woff2'),
+        url('https://assets.menutech.com/fonts/webapp/dubai-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Limelight:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  @font-face{
+    font-family: "menutech";
+    src:
+      url("https://assets.menutech.com/fonts/webapp/menutech.woff2") format("woff2"),
+      url("https://assets.menutech.com/fonts/webapp/menutech.woff") format("woff");
+    font-weight: normal;
+    font-style: normal
+  }
+</style> <style>
+      body {
+        background-image: url("bg.png");
+        background-size: cover;    /* image couvre tout l'écran */
+        background-repeat: no-repeat;  /* pas de répétition */
+       background-position: center;   
+        background-color: var(--color-page);
+        min-height: 100vh;
+      }
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.html-only {
+  display: block;
+}
+
+.main {
+  position: relative;
+}
+
+.coverpage,
+.backcover {
+  display: none;
+}
+
+.main,
+.secondary {
+  -webkit-animation: fadein .5s;
+  -moz-animation: fadein .5s;
+  -ms-animation: fadein .5s;
+  -o-animation: fadein .5s;
+  animation: fadein .5s;
+}
+
+body.noscroll {
+  overflow: hidden;
+}      :root {
+          --color-page-header: #FFFFFF;
+        }
+        :root {
+          --color-panel-header: #E7F4FC;
+          --color-text-header: #000000;
+        }
+:root {
+  --size-mtheader: 12.0pt;
+}
+
+.mt-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 90;
+  font-family: 'Dubai';
+  font-weight: 300;
+  padding: 6px 15px;
+  background-color: var(--color-page-header);
+  box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 400px) {
+  .mt-header {
+    padding: 6px;
+  }
+}
+
+.mt-header .branding {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.mt-header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media print {
+  .mt-header {
+    display: none;
+  }
+
+  .main {
+    padding: 0 20px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 996px;
+  margin: 0 auto;
+}
+
+.mt-header * {
+  box-sizing: border-box;
+}
+
+.mt-header .wrapper>div {
+  display: flex;
+  align-items: center;
+}
+.mt-header .wrapper>.branding {
+  gap: 15px;
+}
+
+.mt-header .branding,
+.mt-header .msm-branding {
+  margin-left: auto;
+}
+
+.mt-header .branding a {
+  display: block;
+  height: 30px;
+}
+
+.mt-header .branding .link a {
+  height: 39px;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 39px;
+}
+
+.mt-header img {
+  display: inline-block;
+  height: 30px;
+  width: auto;
+}
+
+/* Menu */
+.mt-header .dropdown {
+  background-color: var(--color-panel-header);
+}
+
+.mt-header .dropdown ul li {
+  background-color: var(--color-panel-header);
+}
+
+.mt-header .dropdown a {
+  font-size: var(--size-mtheader);
+}
+
+.mt-header .dropdown .menutech-font {
+  font-size: 30px;
+  line-height: 25px;
+}
+
+.mt-header .dropdown a,
+.mt-header .dropdown span {
+  color: var(--color-text-header);
+}
+
+.mt-header .dropdown svg {
+  color: var(--color-text-header);
+  fill: var(--color-text-header);
+}
+
+/* Check mark */
+.checkmark {
+  display: none;
+  position: relative;
+  margin-left: 0px;
+  left: -3px;
+  width: 18px;
+  height: 18px;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.active .checkmark {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: calc(var(--size-mtheader) - 12px);
+}
+
+.checkmark:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  background-color: var(--color-text-header);
+  left: 14px;
+  top: 8px;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: var(--color-text-header);
+  left: 10px;
+  top: 16px;
+}
+
+/* Search */
+.searchInputContainer {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+  background-color: var(--color-panel-header);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-sizing: border-box;
+}
+
+.searchInputContainer * {
+  box-sizing: border-box;
+}
+
+.searchInputContainer:before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 100%;
+  position: relative;
+  background-color: transparent;
+  transition: all 0.5s ease;
+  box-sizing: border-box;
+}
+
+.searchInputContainer.open {
+  flex-grow: 1;
+}
+
+.searchInputContainer.open:before {
+  height: 30px;
+  margin: 5px 0 5px 10px;
+  position: absolute;
+  top: 0;
+  background-color: var(--color-text-header);
+}
+
+@media only screen and (max-width: 700px) {
+  .searchInputContainer.open {
+    margin-right: 0;
+  }
+  .searchInputContainer.open + .branding {
+    display: none;
+  }
+}
+
+.search-box {
+  display: none;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  padding: 5px 35px 5px 20px;
+  font-size: 20px;
+  color: var(--color-text-header);
+  -webkit-appearance: none;
+}
+
+.open .search-box {
+  display: block;
+}
+
+.search-box:focus {
+  outline: none;
+}
+
+.search-box::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-button {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  border: 2px solid var(--color-text-header);
+  display: block;
+  position: relative;
+  margin-left: 2px;
+  transition: all 0.5s ease;
+}
+
+.search-icon:before {
+  content: '';
+  width: 2px;
+  height: 7px;
+  position: absolute;
+  right: -3px;
+  top: 12px;
+  display: block;
+  background-color: var(--color-text-header);
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+}
+
+.search-icon:after {
+  content: '';
+  width: 2px;
+  height: 7px;
+  position: absolute;
+  right: -5px;
+  top: 14px;
+  display: block;
+  background-color: var(--color-text-header);
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+}
+
+.open .search-icon {
+  margin: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+}
+
+.open .search-icon:before {
+  transform: rotate(45deg);
+  right: 10px;
+  top: 4px;
+  height: 12px;
+}
+
+.open .search-icon:after {
+  transform: rotate(-225deg);
+  right: 10px;
+  top: 4px;
+  height: 12px;
+}
+
+@media all and (max-width: 800px) {
+  .mt-header .search-open .branding,
+  .mt-header .search-open .msm-branding {
+    display: none;
+  }
+}
+
+@media all and (max-width: 600px) {
+
+  .mt-header .search-open .branding,
+  .mt-header .search-open .msm-branding,
+  .mt-header .search-open .operators {
+    display: none;
+  }
+
+  .searchInputContainer.open {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .mt-header .branding span {
+    display: none;
+  }
+
+  .mt-header .branding a:not(.integration-link) {
+    max-width: 30px;
+    overflow: hidden;
+  }
+}
+
+
+.dropdown__title {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+}
+
+.mt-header nav {
+  position: sticky;
+  top: 0;
+  display: grid;
+  place-items: center;
+}
+
+.mt-header nav>ul {
+  grid-auto-flow: column;
+}
+
+.mt-header nav>ul>li {
+  margin: 0 0.5rem 0 0;
+}
+
+.mt-header nav>ul>li a,
+.mt-header nav>ul>li .dropdown__title {
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  color: var(--color-text-header);
+  background-color: var(--color-panel-header);
+}
+
+.mt-header nav>ul>li a:focus,
+.mt-header nav>ul>li .dropdown__title:focus {
+  outline: none;
+}
+
+.mt-header nav>ul>li>a,
+.mt-header nav>ul>li .dropdown__title {
+  padding: 0 0.5rem;
+  border-top: 0 solid transparent;
+  transition: 280ms all 120ms ease-out;
+  cursor: pointer;
+}
+
+.mt-header nav>ul>li>a:hover,
+.mt-header nav>ul>li .dropdown__title:hover,
+.mt-header nav>ul>li>a:focus,
+.mt-header nav>ul>li .dropdown__title:focus {
+  // border-top-color: var(--color-text-header);
+  // color: var(--color-text-header);
+}
+
+.mt-header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.mt-header nav ul li {
+  padding: 0;
+}
+
+.mt-header .dropdown {
+  position: relative;
+  min-height: 40px;
+}
+
+.mt-header .dropdown .dropdown__title {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.mt-header .dropdown .dropdown__title:after {
+  content: "";
+  border: 0.35rem solid transparent;
+  border-top-color: var(--color-text-header);
+  margin-left: 0.25em;
+  transform: translateY(0.15em);
+}
+
+.mt-header .dropdown .dropdown__menu {
+  position: absolute;
+  min-width: 25ch;
+  left: 50%;
+  top: calc(100% + 0.5rem);
+  transition: 280ms all 120ms ease-out;
+  transform: rotateX(-90deg) translateX(-50%);
+  transform-origin: top center;
+  visibility: hidden;
+  opacity: 0.3;
+  padding: 0.5em 0;
+  background-color: var(--color-panel-header);
+  box-shadow: 0 0.15em 0.25em rgba(0, 0, 0, 0.25);
+}
+
+.mt-header .dropdown.language-switcher .dropdown__menu {
+  min-width: 133%;
+}
+
+.mt-header .dropdown.size-switcher .dropdown__menu {
+  min-width: 15ch;
+}
+
+.mt-header .dropdown .dropdown__menu a {
+  position: relative;
+  color: var(--color-text-header);
+  display: block;
+  padding: 0.5em;
+  padding-left: 33px;
+  opacity: 0;
+  transition: 280ms all 120ms ease-out;
+  text-align: left;
+}
+
+.mt-header .dropdown .dropdown__menu a:hover {
+  opacity: 0.5 !important;
+}
+
+.mt-header .dropdown .dropdown__menu a:focus {
+  outline: none;
+  opacity: 0.75 !important;
+}
+
+.mt-header .dropdown:after {
+  content: "";
+  border: 0.5rem solid transparent;
+  border-bottom-color: var(--color-panel-header);
+  position: absolute;
+  top: calc(100% - 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 280ms all 120ms ease-out;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.mt-header .dropdown:hover .dropdown__title,
+.mt-header .dropdown:focus-within .dropdown__title {
+  // border-top-color: var(--color-text-header);
+}
+
+.mt-header .dropdown:hover .dropdown__menu,
+.mt-header .dropdown:focus-within .dropdown__menu {
+  opacity: 1;
+  transform: rotateX(0) translateX(-50%);
+  visibility: visible;
+}
+
+.mt-header .dropdown:hover .dropdown__menu a,
+.mt-header .dropdown:focus-within .dropdown__menu a {
+  opacity: 1;
+}
+
+.mt-header .dropdown:hover:after,
+.mt-header .dropdown:focus-within:after {
+  opacity: 1;
+}
+
+.mt-header-secondary {
+  display: flex;
+  padding: 3px 0 0;
+  background-color: var(--color-panel-header);
+}
+
+.mt-header-secondary .links {
+  overflow: auto;
+  white-space: nowrap;
+  font-family: 'Dubai';
+  font-weight: 300;
+  width: 100%;
+  outline: none;
+  overflow-y: hidden;
+  -ms-overflow-style: scroll;
+  scrollbar-width: none;
+}
+
+.mt-header-secondary .links .link {
+  display: inline-block;
+}
+
+.mt-header-secondary .links::-webkit-scrollbar {
+  display: none;
+}
+
+.mt-header-secondary .links a {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: var(--size-mtheader);
+  color: var(--color-text-header);
+}
+
+.mt-header-secondary .links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  left: 50%;
+  height: 3px;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  background-color: var(--color-text-header);
+  transition: width 0.2s ease-out;
+}
+
+.mt-header-secondary .links a:hover {
+  background-color: color-mix(in srgb, var(--color-text-header), transparent 90%);
+}
+
+.mt-header-secondary .links a.active {
+  background-color: color-mix(in srgb, var(--color-text-header), transparent 82%);
+}
+
+.mt-header-secondary .links a.active::after,
+.mt-header-secondary .links a:hover::after {
+  width: 100%;
+}
+
+.mt-header-secondary .nav-action-button {
+  all: unset;
+  -webkit-appearance: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+}
+
+.mt-header-secondary .nav-action-button svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-text-header);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 479px) {
+  .mt-header .dropdown.language-switcher svg,
+  .mt-header .dropdown.labels-switcher .menutech-font:last-child {
+    display: none;
+  }
+
+  .mt-header-secondary .links a {
+    padding: 14px 6px;
+  }
+}
+
+@media only screen and (max-width: 419px) {
+  .mt-header {
+    padding: 6px;
+  }
+
+  .mt-header nav > ul > li > a,
+  .mt-header nav > ul > li .dropdown__title {
+    padding: 0 0.25rem;
+  }
+
+  .mt-header .dropdown .dropdown__menu a {
+    padding: 0.5em 0.25em;
+    padding-left: 29px;
+  }
+
+  .mt-header .branding .integration-link {
+    padding: 10px;
+  }
+
+  .mt-header nav > ul > li {
+    margin: 0 0.25rem 0 0;
+  }
+}          .main + .secondary {
+            background-color: #faf8e8;
+          }
+      .main .additive-symbol,
+      .secondary .additive-symbol {
+        font-size: 8pt;
+        line-height: 9pt;
+      }
+
+      .secondary h3 {
+        text-align: var(--alignment-legend);
+      }
+      .secondary {
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        z-index: 90;
+        height: auto !important;
+        background-color: var(--color-page-header);
+        padding: 0 20px;
+      }
+
+      .secondary h3,
+      .secondary .legend {
+        max-width: 1036px;
+        margin: 0 auto !important;
+      }
+
+      .secondary h3 {
+        font-family: var(--font-title);
+        line-height: 30px;
+        font-size: 26px;
+        color: var(--color-title);
+        cursor: pointer;
+        padding: 12px 0;
+      }
+
+        .secondary h3::after {
+          content: ' ';
+          display: inline-block;
+
+          border-top: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+          border-right: 5px solid currentColor;
+
+          vertical-align: middle;
+          margin-left: .7rem;
+          transform: translateY(-2px);
+
+          transition: transform .2s ease-out;
+        }
+        .secondary h3.show::after {
+          transform: rotate(90deg) translateX(-3px);
+        }
+      .page-top,
+      .section-line.level-1.highlight.highlight-type-4 {
+        margin-top: 0.0mm;
+        margin-bottom: 5.0mm;
+      }
+      .section-line.level-1,
+      .section-line.level-2.highlight.highlight-type-4 {
+        margin-top: 15.0mm;
+        margin-bottom: 5.0mm;
+      }
+      .section-line.level-2,
+      .section-line.level-3.highlight.highlight-type-4 {
+        margin-top: 12.0mm;
+        margin-bottom: 4.0mm;
+      }
+      .section-line.level-3 {
+        margin-top: 9.0mm;
+        margin-bottom: 5.0mm;
+      }
+      .dish-line,
+      .separator-line{
+        margin: 5.0mm 0;
+      }
+      .separator-description-secondary {
+        margin-top: 6.0mm;
+      }
+        .section-line.level-1.spacer,
+        .section-line.level-1.highlight.highlight-type-4.spacer,
+        .section-line.level-2.highlight.highlight-type-4.spacer {
+          margin-top: 25.0mm;
+        }
+        .section-line.level-2.spacer,
+        .section-line.level-3.highlight.highlight-type-4.spacer {
+          margin-top: 22.0mm;
+        }
+        .section-line.level-3.spacer {
+          margin-top: 19.0mm;
+        }
+        .dish-line.spacer {
+          margin-top: 11.0mm;
+        }
+        .menu:not(.search) .section-line[data-toggled]:not(.no-toggle),
+        .menu:not(.search)+.section-line[data-toggled]:not(.no-toggle),
+        .menu:not(.search)+.menu-details .section-line[data-toggled]:not(.no-toggle) {
+          cursor: pointer;
+        }
+
+        .menu:not(.search) .section-line[data-toggled]:not(.no-toggle) .section-name .primary-language::before,
+        .section-line[data-toggled]:not(.no-toggle) .special-collapsible-header::before {
+          content: '\203A'; letter-spacing: 0;
+          position: relative;
+          display: inline-block;
+          margin-right: 3px;
+          padding: 0 5px;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+          font-style: normal !important;
+          font-weight: 400 !important;
+        }
+        
+        .menu:not(.search) .section-line[data-toggled=true]:not(.no-toggle) .section-name .primary-language::before,
+        .menu:not(.search)+.section-line[data-toggled=true]:not(.no-toggle) .special-collapsible-header::before,
+        .menu:not(.search)+.menu-details .section-line[data-toggled=true]:not(.no-toggle) .special-collapsible-header::before {
+          transform: rotate(90deg);
+        }
+
+        .section-line.hide-name + .dishes-block {
+          height: auto!important;
+        }
+      .main {
+        padding: 30px 15px 15px;
+        padding-bottom: 100px !important;
+        max-width: 996px;
+        margin: 0 auto;
+      }
+      .paper-footnote,
+      .footnote {
+        text-align: right;
+      }
+      @media only print {
+        .mt-collection-sidepanel {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 1020px) {
+        .mt-collection-sidepanel {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .price .variant {
+          padding-left: 0 !important;
+        }
+
+        .variant-between-price-separator {
+          display: none;
+        }
+
+        .price .variant.short-variant,
+        .price .variant.long-variant {
+          display: block !important;
+        }
+
+        .section-price.headers-only {
+          display: none !important;
+        }
+
+        .menu .dish-line.has-variants .dish-inner {
+          display: block;
+        }
+
+        .menu .dish-line .price {
+          padding: 0;
+        }
+
+        .dish-line .price .variant,
+        .menu .dish-line.has-variants .price,
+        .dish-line.has-variants.section-variant-header:not(.different-variants) .price .variant.short-variant,
+        .dish-line.has-variants.section-variant-header:not(.different-variants) .price .variant.long-variant {
+          width: auto!important;
+          padding: unset;
+          white-space: normal;
+          text-align: unset;
+        }
+
+        .menu .dish-line .price {
+          text-align: unset;
+        }
+
+        .dish-line.has-variants.section-variant-header:not(.different-variants) {
+          .variant-name {
+            display: unset;
+          }
+        }
+
+        .dish-line.section-variant-header:not(.different-variants).shift-variant .price.short-price::after,
+        .dish-line.section-variant-header:not(.different-variants).shift-variant .price.short-variant::after {
+          display: none;
+        }
+
+        .dish-line.section-variant-header:not(.different-variants) .price .variant {
+          width: auto;
+        }
+
+        .dish-line.section-variant-header.bev.has-variants:not(.has-image):not(.has-winery) .price .variant,
+        .dish-line.section-variant-header.win.has-variants:not(.has-image):not(.has-winery) .price .variant,
+        .dish-line.section-variant-header:not(.different-variants) .price .variant {
+          min-width: auto;
+          text-align: left;
+        }
+      }
+  </style>
+<style>
+      .footnote {
+        text-align: right;
+      }
+      .page-top h1 {
+        text-transform: var(--capitalisation-title);
+      }
+      .page-top h2 {
+        text-transform: var(--capitalisation-subtitle);
+      }
+      .section-line.level-1 .section-wrapper .section-name-wrapper .section-name {
+        text-transform: var(--capitalisation-section);
+      }
+      .section-line.level-1.highlight.highlight-type-4 .section-wrapper .section-name-wrapper .section-name {
+        text-transform: var(--capitalisation-title);
+      }
+      .section-line.level-2 .section-wrapper .section-name-wrapper .section-name,
+      .section-line.level-3.highlight.highlight-type-4 .section-wrapper .section-name-wrapper .section-name {
+        text-transform: var(--capitalisation-subsection);
+      }
+      .section-line.level-2.highlight.highlight-type-4 .section-wrapper .section-name-wrapper .section-name {
+        text-transform: var(--capitalisation-section);
+      }
+      .dish-line .dish-wrapper .dish-inner .dish,
+      .section-line.level-3 .section-wrapper .section-name-wrapper .section-name {
+        text-transform: var(--capitalisation-text);
+      }
+      .dish-line .dish-wrapper .dish-inner .dish .dish-description,
+      .section-line .section-description,
+      .separator-description-secondary {
+        text-transform: var(--capitalisation-text-secondary);
+      }
+
+    .page-top,
+    .section-line.level-1.highlight.highlight-type-4 {
+      text-align: center;
+    }
+    .section-line.level-1,
+    .section-line.level-2.highlight.highlight-type-4 {
+      text-align: center;
+    }
+    .section-line.level-2,
+    .section-line.level-3.highlight.highlight-type-4 {
+      text-align: center;
+    }
+    .section-line.level-3 {
+      text-align: center;
+    }
+    .dish-line,
+    .separator-line,
+    .section-line.level-3 .section-description,
+    .menu .item-wine {
+      text-align: center;
+    }
+
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .dish-wrapper .dish-inner .price {
+      padding-left: 0!important;
+    }
+    
+      .menu .item-wine {
+        margin: 0 auto;
+      }
+      .dish-line.has-price:not(.has-variants) .price {
+        padding-left: 0!important;
+      }
+    .section-line.highlight.highlight-type-5,
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line,
+    .section-line.highlight.highlight-type-5 + .dishes-block .section-line,
+    .section-line.highlight.highlight-type-5 + .dishes-block .separator-line,
+    .section-line.highlight.highlight-type-5 + .dishes-block .section-description,
+    .section-line.highlight.highlight-type-5 + .dishes-block .separator-description-secondary,
+    .section-line.highlight.highlight-type-5 > .section-description {
+      text-align: center;
+    }
+    
+      .section-line.level-1:not(.has-page-bg) .item-image {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        max-width: none;
+      }
+      .section-line.level-1:not(.has-page-bg) .item-image img {
+        display: inline-block;
+        margin: 0 auto;
+      }
+      .section-line.level-1.has-variants .section-price.headers-only .variant {
+        text-align: right;
+      }
+      .section-line.level-1.has-variants .section-wrapper .section-name-wrapper {
+        display: block;
+      }
+      .section-line.level-1 .section-description {
+        text-align: center;
+      }
+      .section-line.level-1 .section-wrapper .section-name-wrapper {
+        display: block;
+      }
+      .section-line.level-1 + .dishes-block .section-description,
+      .section-line.level-1 + .dishes-block-nonhierarchical .section-description {
+        text-align: center;
+      }
+      .section-line.level-2:not(.has-page-bg) .item-image,
+      .section-line.level-3:not(.has-page-bg) .item-image {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+      .section-line.level-2.has-variants .section-wrapper .section-name-wrapper {
+        display: block;
+      }
+      .section-line.level-2 .section-description {
+        text-align: center;
+      }
+      .section-line.level-2 .section-wrapper .section-name-wrapper {
+        display: block;
+      }
+      .section-line.level-2 + .dishes-block .section-description,
+      .section-line.level-2 + .dishes-block-nonhierarchical .section-description {
+        text-align: center;
+      }
+      .menu:not(.search) .dish-line,
+      .menu:not(.search) .dish-line .dish-wrapper,
+      .menu:not(.search) .dish-line .dish-wrapper .dish-inner {
+        display: block;
+      }
+      .dish-line .dish-wrapper .item-image {
+        margin: 0 auto;
+      }
+      .section-line.level-3 .section-wrapper .section-name-wrapper {
+        display: block;
+      }
+      .section-line.level-2.has-variants .section-price {
+        display: block;
+        text-align: center;
+      }
+      .section-line.level-2.has-variants .section-price.headers-only .variant {
+        text-align: center;
+      }
+      .menu .dish-line.section-variant-header:not(.different-variants) .price .variant,
+      .menu .section-line.has-variants .section-price.headers-only .variant {
+        text-align: center;
+        padding-left: 0;
+      }
+      .menu .dish-line.bev.has-variants:not(.has-image):not(.has-winery) .price .variant,
+      .menu .dish-line.win.has-variants:not(.has-image):not(.has-winery) .price .variant {
+        padding: 0;
+        width: auto;
+      }
+      .dish-line .dish-inner .item-image.square .square-bg {
+        margin: 0 auto;
+      }
+      .section-line.level-3 + .dishes-block .section-description,
+      .section-line.level-3 + .dishes-block-nonhierarchical .section-description {
+        text-align: center;
+      }
+      .menu .dish-line.has-variants .inline-price .price.long-price {
+        display: block;
+      }
+      .menu .dish-line.has-variants .inline-price .inline-price-separator.long-price {
+        display: none;
+      }
+
+    .section-line.highlight.highlight-type-5 + .dishes-block .section-line .section-wrapper .section-name-wrapper,
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line,
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .dish-wrapper,
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .dish-wrapper .dish-inner {
+      display: block !important;
+    }
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .dish-wrapper .item-image {
+      margin: 0 auto;
+    }
+    .menu .section-line.highlight.highlight-type-5 .section-wrapper .section-name-wrapper {
+      display: block;
+    }
+    .menu .section-line.highlight.highlight-type-5 + .dishes-block .dish-line.section-variant-header:not(.different-variants) .price .variant,
+    .menu .section-line.highlight.highlight-type-5.has-variants .section-price.headers-only .variant {
+      text-align: center;
+      padding-left: 0;
+    }
+    .menu .section-line.highlight.highlight-type-5 + .dishes-block .dish-line.bev.has-variants:not(.has-image):not(.has-winery) .price .variant,
+    .menu .section-line.highlight.highlight-type-5 + .dishes-block .dish-line.win.has-variants:not(.has-image):not(.has-winery) .price .variant {
+      padding: 0;
+      width: auto;
+    }
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .dish-inner .item-image.square .square-bg {
+      margin: 0 auto;
+    }
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .dish-wrapper .dish-inner .price,
+    .section-line.highlight.highlight-type-5 .section-price {
+      text-align: center;
+    }
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .dish-wrapper .item-image {
+      margin-right: 0;
+    }
+      .section-line.highlight.highlight-type-5 + .dishes-block .checkbox {
+        margin-right: 0;
+      }
+
+      .menu .dish-line.has-variants .dish-wrapper .dish-inner .price .variant.short-variant,
+      .menu .dish-line.bev.has-variants:not(.has-image):not(.has-winery) .price .variant,
+      .menu .dish-line.win.has-variants:not(.has-image):not(.has-winery) .price .variant {
+        display: block;
+        width: auto!important;
+        padding: 0;
+      }
+      .dish-line .origin-vintage:before {
+        content: ", ";
+      }
+      .menu .dish-line .dish-wrapper .dish-inner .dish .secondary-language,
+      .menu .page-top h2 .secondary-language,
+      .menu .section-line .section-wrapper .section-name-wrapper .section-name .secondary-language {
+        display: block;
+      }
+      .menu .dish-line .dish-wrapper .dish-inner .dish .dish-name .secondary-language::before,
+      .menu .section-line.level-1 .secondary-language::before,
+      .menu .section-line.level-2 .secondary-language::before,
+      .menu .section-line.level-3 .secondary-language::before {
+        content: ""!important;
+      }
+    @page {}
+  </style>
+<style>
+  hr.navbar { display: none }
+    html, body {
+        margin: 0;
+        padding: 0;
+        hyphens: manual;
+        box-sizing: border-box;
+    }
+    .main {
+        hyphens: manual;
+        box-sizing: border-box;
+    }
+    p {
+      margin: 1em 0 0;
+    }
+    p:first-child,
+    br + p {
+      margin-top: 0;
+    }
+  .dish-line:not(.win) .origin-method::before {
+    content: "(";
+  }
+  .dish-line:not(.win) .origin-method::after {
+    content: ")";
+  }
+  .vintage-inline-before::after {
+    content: ', ';
+  }
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .checkbox {
+    position: relative;
+    top: 1pt;
+    display: inline-block;
+    width: 8pt;
+    height: 8pt;
+    margin-left: 3mm;
+  }
+    .checkbox {
+      background-color: var(--color-panel);
+      border-width: 1pt;
+      border-style: solid;
+      border-color: var(--color-panel);
+    }
+    .dish-line .dish-wrapper .dish-inner {
+      position: relative;
+    }
+    .dish-line:not(.highlight) .checkbox-wrapper {
+      position: relative;
+      margin-left: 0.0mm;
+    }
+    .dish-line.highlight-type-1 .checkbox-wrapper,
+    .dish-line.highlight-type-2 .checkbox-wrapper {
+      left: 0;
+    }
+    .checkbox {
+      margin-right: 3mm;
+      margin-left: 0;
+    }
+    .dish-line:not(.highlight-type-1):not(.highlight-type-2) .dish-wrapper .dish-inner .checkbox-wrapper + .dish .dish-item,
+    .dish-line:not(.highlight-type-1):not(.highlight-type-2) .dish-wrapper .dish-inner .checkbox-wrapper + .dish .dish-description {
+      padding-left: 0;
+    }
+      .variant-price:after {
+        content: " TND";
+      }
+  .hidden {
+    display: none !important;
+  }
+    .section-line.highlight.hidden + .dishes-block {
+      height: auto!important;
+    }
+  .hide-name .dish-name,
+  .hide-name .section-name {
+    display: none!important;
+  }
+  a.dish-name-link {
+    color: unset;
+    text-decoration: unset;
+    transition: color 0.2s ease-in-out;
+  }
+    a.dish-name-link:hover {
+      color: var(--color-icons);
+    }
+    a.dish-name-link svg {
+      display: inline-block;
+      margin: 0pt 0 -5pt;
+      width: var(--line-height-text);
+      height: var(--line-height-text);
+      transition: fill 0.2s ease-in-out;
+    }
+    a.dish-name-link:hover svg {
+      fill: var(--color-icons);
+    }
+    a.dialog-icon svg {
+      position: relative;
+      top: 2pt;
+      margin: 0;
+      width: 20px;
+      height: 20px;
+      transition: fill 0.2s ease-in-out;
+    }
+    a.dialog-icon:hover svg {
+      fill: var(--color-icons);
+    }
+    .section-line.level-1.hide-name .section-name {
+      display: unset;
+    }
+    .section-line.level-2.hide-name .section-name {
+      display: unset;
+    }
+    .section-line.level-3.hide-name .section-name {
+      display: unset;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .page-break .section-line.page-break { 
+      page-break-before: auto;
+    }
+  .variant-price {
+    white-space: nowrap;
+  }
+
+  .allergens-additives .allergen-symbol,
+  .labels .label-symbol {
+    margin: -2mm 0;
+  }
+
+  .allergens-additives.allergen-format-2 .allergens > *:not(:last-child)::after,
+  .allergens-additives.allergen-format-3 .allergens > *:not(:last-child)::after,
+  .allergens-additives.allergen-format-6 .allergens > *:not(:last-child)::after,
+  .allergens-additives.additive-format-2 .additives > *:not(:last-child)::after,
+  .allergens-additives.additive-format-3 .additives > *:not(:last-child)::after,
+  .allergens-additives.additive-format-5 .additives > *:not(:last-child)::after,
+  .allergens-additives.label-format-3 .labels > *:not(:last-child)::after,
+  .allergens-additives.label-format-4 .labels > *:not(:last-child)::after,
+  .allergens-additives.label-format-5 .labels > *:not(:last-child)::after {
+    content: ',';
+    font-weight: var(--weight-footnote);
+  }
+
+  .allergens-additives.label-format-3.allergen-format-2 .labels > *:last-child::after,
+  .allergens-additives.label-format-4.allergen-format-2 .labels > *:last-child::after,
+  .allergens-additives.label-format-5.allergen-format-2 .labels > *:last-child::after,
+  .allergens-additives.label-format-3.allergen-format-3 .labels > *:last-child::after,
+  .allergens-additives.label-format-4.allergen-format-3 .labels > *:last-child::after,
+  .allergens-additives.label-format-5.allergen-format-3 .labels > *:last-child::after,
+  .allergens-additives.label-format-3.allergen-format-6 .labels > *:last-child::after,
+  .allergens-additives.label-format-4.allergen-format-6 .labels > *:last-child::after,
+  .allergens-additives.label-format-5.allergen-format-6 .labels > *:last-child::after,
+
+  .allergens-additives.label-format-3.additive-format-2 .labels > *:last-child::after,
+  .allergens-additives.label-format-4.additive-format-2 .labels > *:last-child::after,
+  .allergens-additives.label-format-5.additive-format-2 .labels > *:last-child::after,
+  .allergens-additives.label-format-3.additive-format-3 .labels > *:last-child::after,
+  .allergens-additives.label-format-4.additive-format-3 .labels > *:last-child::after,
+  .allergens-additives.label-format-5.additive-format-3 .labels > *:last-child::after,
+  .allergens-additives.label-format-3.additive-format-5 .labels > *:last-child::after,
+  .allergens-additives.label-format-4.additive-format-5 .labels > *:last-child::after,
+  .allergens-additives.label-format-5.additive-format-5 .labels > *:last-child::after,
+
+  .allergens-additives.additive-format-2.allergen-format-2 .allergens > *:last-child::after,
+  .allergens-additives.additive-format-3.allergen-format-2 .allergens > *:last-child::after,
+  .allergens-additives.additive-format-5.allergen-format-2 .allergens > *:last-child::after,
+  .allergens-additives.additive-format-2.allergen-format-3 .allergens > *:last-child::after,
+  .allergens-additives.additive-format-3.allergen-format-3 .allergens > *:last-child::after,
+  .allergens-additives.additive-format-5.allergen-format-3 .allergens > *:last-child::after,
+  .allergens-additives.additive-format-2.allergen-format-6 .allergens > *:last-child::after,
+  .allergens-additives.additive-format-3.allergen-format-6 .allergens > *:last-child::after,
+  .allergens-additives.additive-format-5.allergen-format-6 .allergens > *:last-child::after {
+    content: ',';
+  }
+
+  .allergens-additives .allergen-item.format-2,
+  .allergens-additives .allergen-item.format-3,
+  .allergens-additives .allergen-item.format-6,
+  .allergens-additives .additive-item.format-2,
+  .allergens-additives .additive-item.format-3,
+  .allergens-additives .additive-item.format-5,
+  .allergens-additives .label-item.format-3,
+  .allergens-additives .label-item.format-4,
+  .allergens-additives .label-item.format-5 {
+    font-weight: var(--weight-footnote);
+  }
+
+  .label-pictogram {
+    display: inline-block;
+    max-width: 16.0pt;
+    max-height: 16.0pt;
+  }
+    .menu .section-line .section-price .variant-name,
+    .menu .dish-line .price .variant-name {
+      font-size: var(--size-price);
+    }
+    .dish-line .price .variant-name,
+    .section-line .section-price {
+      text-transform: var(--capitalisation-price);
+      font-variant: normal;
+    }
+  
+  .allergens-additives .allergy {
+    color: red;
+  }
+
+  .allergen-colour {
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 50%;
+  }
+
+  .dish-description ul,
+  .dish-description ol {
+    margin: 0;
+    padding-left: 0.7rem;
+  }
+
+  .section-description table,
+  .dish-description table,
+  .separator-description-secondary table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .section-description table th,
+  .dish-description table th,
+  .separator-description-secondary table th,
+  .section-description table td,
+  .dish-description table td,
+  .separator-description-secondary table td {
+    text-align: left;
+    vertical-align: top;
+  }
+
+    .section-description table th,
+    .dish-description table th,
+    .separator-description-secondary table th,
+    .section-description table td,
+    .dish-description table td,
+    .separator-description-secondary table td {
+      padding: 3pt;
+      border-width: 1pt;
+      border-style: solid;
+      border-color: var(--color-divider);
+    }
+  .carbohydrate-units {
+    color: var(--color-text-secondary);
+  }
+
+  .item-wine {
+    position: relative;
+    display: table;
+    text-align: left;
+  }
+
+  .item-wine .wine-wrapper {
+    display: table-row;
+  }
+
+  .item-wine .wine-name,
+  .item-wine .wine-symbol {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .item-wine .wine-name {
+    font-size: var(--size-footnote);
+    line-height: var(--line-height-footnote);
+    font-weight: normal;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .item-wine .wine-symbol {
+    width: 0.8em;
+    font-family: 'menutech';
+    font-size: 14pt;
+    font-weight: normal;
+    color: var(--color-icons);
+    text-align: left;
+  }
+    .item-wine .wine-symbol {
+      width: 1em;
+    }
+  .item-wine .wine-symbol .allergen-symbol {
+    top: -3px;
+  }
+
+  .item-wine .wine-name p {
+    margin: 0;
+  }
+  .menu-details .menu-wine {
+    position: relative;
+    display: table;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .menu-details .menu-wine .menu-wine-wrapper {
+    display: table-row;
+  }
+  .menu-details .menu-wine .menu-wine-wrapper .menu-wine-name,
+  .menu-details .menu-wine .menu-wine-wrapper .menu-wine-symbol {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .menu-details .menu-wine .menu-wine-wrapper .menu-wine-symbol {
+    width: 25pt;
+  }
+  .menu-details .menu-wine .menu-wine-wrapper .menu-wine-symbol {
+    font-family: 'menutech'!important;
+    font-weight: normal;
+  }
+  .menu-details  .menu-variants-wrapper .menu-variant {
+    white-space: nowrap;
+    font-family: var(--font-price);
+    font-size: var(--size-price);
+    line-height: var(--line-height-price);
+    font-weight: var(--weight-price);
+    color: var(--color-price);
+    letter-spacing: var(--letter-spacing-price);
+    font-style: var(--font-style-price);
+  }
+  .menu-details  .menu-variants-wrapper .menu-variant-name.has-price:after {
+    content: ":";
+  }
+</style>
+<style>.additive-symbol{display:inline-block;text-align:center;font-size:6pt;line-height:10pt;color:var(--color-text-secondary);width:10pt;height:10pt;border-width:.5pt;border-style:solid;border-color:var(--color-text-secondary);border-radius:10pt;position:relative;top:-.3mm;margin-left:3pt}.additive-symbol.format-1{background-color:var(--color-text-secondary);color:#fff}.allergen-symbol,.label-symbol{position:relative;top:1pt;display:inline-block;font-family:menutech;color:var(--color-icons);font-size:var(--size-icons);font-weight:400;text-transform:uppercase}.additive-item.format-2,.additive-item.format-3,.allergen-item.format-2,.allergen-item.format-3{position:relative!important;border:none!important}.allergen-symbol.format-1,.label-symbol.format-1{text-transform:lowercase!important}.allergens-additives.allergen-format-2,.allergens-additives.allergen-format-3,.allergens-additives.allergen-format-6{margin-left:0!important}.additive-item.format-2:not(:last-child):after,.allergen-item.format-2:not(:last-child):after{content:",\00a0"}.additive-item.format-3:not(:last-child):after,.allergen-item.format-3:not(:last-child):after{content:",\00a0"}.allergens-additives.additive-format-5 .additives,.allergens-additives.allergen-format-6 .allergens,.allergens-additives.label-format-5 .labels{font-family:var(--font-declarations);font-size:var(--size-declarations);font-weight:var(--weight-declarations);line-height:var(--line-height-declarations);letter-spacing:var(--letter-spacing-declarations);color:var(--color-declarations);font-style:var(--font-style-declarations)}.coverpage h1,.page-top h1{line-height:var(--line-height-title);color:var(--color-title)}.allergens-additives.allergen-format-6.additive-format-5+.additives,.allergens-additives.label-format-5.additive-format-5+.additives,.allergens-additives.label-format-5.allergen-format-6 .labels+.allergens{margin-left:2pt}.allergens-additives.label-format-5 .labels>:not(:last-child)::after,.allergens-additives.label-format-5.allergen-format-6 .allergens>:not(:last-child)::after{content:','}.legend-item .additive-item.format-3,.legend-item .allergen-item.format-3{top:-1mm!important}.legend-item .additive-item.format-3:not(:last-child)::after,.legend-item .allergen-item.format-3:not(:last-child)::after{content:''!important}.allergen-colour{position:relative;display:inline-block;margin-top:1mm;margin-left:1mm}.additive-pictogram,.allergen-pictogram,.label-pictogram{position:relative;display:inline-block;width:var(--size-pictograms);height:var(--size-pictograms);object-fit:contain;margin-bottom:-1pt;margin-right:2pt}.coverpage h1{font-family:var(--font-title);font-weight:var(--weight-title);font-size:var(--size-title);letter-spacing:var(--letter-spacing-title);font-style:var(--font-style-title)}.coverpage h2,.page-top h2{color:var(--color-subtitle);letter-spacing:var(--letter-spacing-subtitle)}.coverpage h2{font-family:var(--font-subtitle);font-weight:var(--weight-subtitle);line-height:var(--line-height-subtitle);font-size:var(--size-subtitle);font-style:var(--font-style-subtitle)}.coverpage h3{font-family:var(--font-section);font-weight:var(--weight-section);font-size:var(--size-section);line-height:var(--line-height-section);color:var(--color-section);letter-spacing:var(--letter-spacing-section);font-style:var(--font-style-section)}.coverpage h4{font-family:var(--font-subsection);font-weight:var(--weight-subsection);font-size:var(--size-subsection);line-height:var(--line-height-subsection);color:var(--color-subsection);letter-spacing:var(--letter-spacing-subsection);font-style:var(--font-style-subsection)}.page-top h1{font-family:var(--font-title);font-weight:var(--weight-title);font-size:var(--size-title);letter-spacing:var(--letter-spacing-title);font-style:var(--font-style-title)}.page-top h1 .secondary-language,.section-line.level-1 h2{line-height:var(--line-height-section);color:var(--color-section)}.page-top h1 .secondary-language{font-family:var(--font-section);font-weight:var(--weight-section);font-size:var(--size-section)}.page-top h1 .secondary-language:before{content:" · "}.page-top h2{font-family:var(--font-subtitle);font-weight:var(--weight-subtitle);line-height:var(--line-height-subtitle);font-size:var(--size-subtitle);font-style:var(--font-style-subtitle)}.section-line.level-1 .section-wrapper{box-sizing:border-box;padding-left:var(--indent-section)}.section-line.level-1 h2{font-family:var(--font-section);font-weight:var(--weight-section);font-size:var(--size-section);letter-spacing:var(--letter-spacing-section);font-style:var(--font-style-section)}.section-line.level-1 h2 .secondary-language{font-family:var(--font-subsection);font-weight:var(--weight-subsection);font-size:var(--size-subsection);line-height:var(--line-height-subsection);color:var(--color-subsection);letter-spacing:var(--letter-spacing-subsection);font-style:var(--font-style-subsection)}.section-line.level-1 .section-description,.section-line.level-1+.dishes-block>.section-description{padding-left:var(--indent-section)}.section-line.level-1.highlight.highlight-type-4 .section-wrapper{box-sizing:border-box;padding-left:var(--indent-title)}.section-line.level-1.highlight.highlight-type-4 h2{font-family:var(--font-title);font-weight:var(--weight-title);font-size:var(--size-title);line-height:var(--line-height-title);color:var(--color-title);letter-spacing:var(--letter-spacing-title);font-style:var(--font-style-title)}.section-line.level-1.highlight.highlight-type-4 h2 .secondary-language{font-family:var(--font-section);font-weight:var(--weight-section);font-size:var(--size-section);line-height:var(--line-height-section);color:var(--color-section);letter-spacing:var(--letter-spacing-section);font-style:var(--font-style-section)}.section-line.level-2 h2,.section-line.level-2 h2 .secondary-language{font-family:var(--font-subsection);font-weight:var(--weight-subsection)}.section-line.level-1.highlight.highlight-type-4 .section-description,.section-line.level-1.highlight.highlight-type-4+.dishes-block>.section-description{padding-left:var(--indent-title)}.section-line.level-1 .section-wrapper .section-name-wrapper .section-price{flex-shrink:0}.section-line.level-2 .section-wrapper{box-sizing:border-box;padding-left:var(--indent-subsection)}.section-line.level-2 h2{font-size:var(--size-subsection);line-height:var(--line-height-subsection);color:var(--color-subsection);letter-spacing:var(--letter-spacing-subsection);font-style:var(--font-style-subsection)}.section-line.level-2 h2 .secondary-language{font-size:var(--size-text);line-height:var(--line-height-text);color:var(--color-text-secondary);letter-spacing:var(--letter-spacing-text-secondary);font-style:var(--font-style-text-secondary)}.section-line.level-2 .section-description,.section-line.level-2+.dishes-block>.section-description{padding-left:var(--indent-subsection)}.section-line.level-2.highlight.highlight-type-4 .section-wrapper{box-sizing:border-box;padding-left:var(--indent-section)}.section-line.level-2.highlight.highlight-type-4 h2{font-family:var(--font-section);font-weight:var(--weight-section);font-size:var(--size-section);line-height:var(--line-height-section);color:var(--color-section);letter-spacing:var(--letter-spacing-section);font-style:var(--font-style-section)}.section-line.level-2.highlight.highlight-type-4 h2 .secondary-language{font-family:var(--font-subsection);font-weight:var(--weight-subsection);font-size:var(--size-subsection);line-height:var(--line-height-subsection);color:var(--color-subsection);letter-spacing:var(--letter-spacing-subsection);font-style:var(--font-style-subsection)}.section-line.level-3 h2,.section-line.level-3 h2 .secondary-language{font-family:var(--font-text);font-size:var(--size-text);line-height:var(--line-height-text);font-weight:var(--weight-subsection)}.section-line.level-2.highlight.highlight-type-4 .section-description,.section-line.level-2.highlight.highlight-type-4+.dishes-block>.section-description{padding-left:var(--indent-section)}.section-line.level-3 .section-wrapper{box-sizing:border-box;padding-left:var(--indent-subsection)}.section-line.level-3 h2{color:var(--color-text)}.section-line.level-3 h2 .secondary-language{color:var(--color-text-secondary)}.section-line.level-3 .section-description,.section-line.level-3+.dishes-block>.section-description{padding-left:var(--indent-subsection)}.section-line.level-3.highlight.highlight-type-4 h2{font-family:var(--font-subsection);font-weight:var(--weight-subsection);font-size:var(--size-subsection);line-height:var(--line-height-subsection);color:var(--color-subsection);letter-spacing:var(--letter-spacing-subsection);font-style:var(--font-style-subsection)}.dish-description,.section-line.level-3.highlight.highlight-type-4 h2 .secondary-language{letter-spacing:var(--letter-spacing-text-secondary);font-style:var(--font-style-text-secondary)}.section-line.level-3.highlight.highlight-type-4 h2 .secondary-language{font-family:var(--font-subsection);font-weight:var(--weight-subsection);font-size:var(--size-text);line-height:var(--line-height-text);color:var(--color-text-secondary)}.coverpage,.main,.secondary,.section-line .section-description{font-family:var(--font-text);font-weight:var(--weight-text);font-size:var(--size-text);line-height:var(--line-height-text)}.section-line.level-3 .section-name{font-size:var(--size-text);line-height:var(--line-height-text)}.coverpage,.main,.secondary{color:var(--color-text)}.page-top h2 .secondary-language,.section-line .section-wrapper .section-name-wrapper .section-name .secondary-language{color:var(--color-text-secondary)}.coverpage{width:100%}.coverpage img{max-width:100%;display:block}.coverpage .ql-align-center img{display:inline-block}.page-top h1,.page-top h2{margin:0}.page-top .menu-title-wrapper{padding-left:var(--indent-title);box-sizing:border-box}.page-top .menu-subtitle-wrapper{padding-left:var(--indent-subtitle);box-sizing:border-box}.page-top h2 .secondary-language:before{content:" · "}.main{page:content}.page-top+.section-line{margin-top:0}.section-line{position:relative}.section-line:not(.spacer):first-child{margin-top:0!important}.section-line h2{margin:0}.section-line.level-1.highlight.highlight-type-4{column-span:all}.section-line.level-1 .section-wrapper .section-name-wrapper .section-price,.section-line.level-2 .section-wrapper .section-name-wrapper .section-price,.section-line.level-3 .section-wrapper .section-name-wrapper .section-price{flex-shrink:0}.section-line.level-1 .secondary-language:before,.section-line.level-2 .secondary-language:before,.section-line.level-3 .secondary-language:before{display:inline-block!important;content:"\00A0·\00A0"!important}.section-line .section-wrapper{width:100%}.section-line .section-wrapper .section-name-wrapper{display:flex;align-items:flex-end;justify-content:space-between;width:100%;flex-wrap:wrap;gap:4mm}.section-line .section-wrapper .section-name-wrapper .section-name{flex-grow:1}.section-line .section-wrapper .section-name-wrapper .section-price{flex-shrink:0}.section-line .section-description{color:var(--color-text)}.dish-description,.dish-description .secondary-language,.section-line .section-description .secondary-language,.separator-description-secondary .secondary-language{color:var(--color-text-secondary)}.section-line .section-description .item,.section-line .section-description p{display:inline}.dish-description .item,.separator-description-secondary.long-description .item{display:block}.section-line .section-description .secondary-language:before{content:" · "}.section-line.has-image{flex-wrap:wrap}.section-line.has-image .section-wrapper .item-image img{max-width:100%;height:auto}.section-line.has-image .section-wrapper .item-image.square .square-bg{height:50mm;width:50mm;background-size:cover;background-position:center center}.item-wine{margin-top:4pt;padding-left:var(--indent-text)}.item-wine .wine-symbol{top:-1pt}.dish-description{padding-left:var(--indent-text-secondary);font-weight:var(--weight-text-secondary);font-family:var(--font-text-secondary);font-size:var(--size-text-secondary);line-height:var(--line-height-text-secondary);box-sizing:border-box}.dish-description.inline{display:inline}.dish-item .dish-description{padding-left:0}.dish-line{position:relative;display:block;box-sizing:border-box}.dish-line .dish-wrapper .dish-inner{display:flex;width:100%}.dish-line .dish-wrapper .dish-inner .dish{flex-basis:auto;flex-grow:1;overflow:hidden}.dish-line .dish-wrapper .dish-inner .dish .labels{margin-right:1pt;white-space:nowrap}.dish-line .dish-wrapper .dish-inner .dish .labels img{margin-right:0}.dish-line .dish-wrapper .dish-inner .dish .allergens-additives{text-align:right;display:inline-block;margin-left:2pt;white-space:nowrap}.dish-line .dish-wrapper .dish-inner .dish .allergens-additives .allergen-symbol,.dish-line .dish-wrapper .dish-inner .dish .allergens-additives .label-symbol{color:var(--color-icons);line-height:var(--line-height-text);font-size:var(--size-icons);margin:-2mm 0}.dish-line .dish-wrapper .dish-inner .dish .allergen-symbol,.dish-line .dish-wrapper .dish-inner .dish .label-symbol{margin:-1mm 0}.dish-line .dish-wrapper .dish-inner .dish .dish-name .secondary-language{color:var(--color-text-secondary)}.dish-line .dish-wrapper .dish-inner .dish .dish-name .secondary-language:before{content:" · "}.dish-line .dish-wrapper .dish-inner .dish .alcohol{font-size:var(--size-text-secondary);line-height:var(--line-height-text-secondary);font-weight:var(--weight-text-secondary)}.dish-line .dish-wrapper .dish-inner .price{flex-grow:0;flex-shrink:0}.dish-line .dish-wrapper .dish-inner .price .variant{padding:0}.dish-line .dish-wrapper .dish-inner .price .variant:first-child{margin-top:0}.dish-line .dish-wrapper .dish-inner .price .variant:last-child{margin-bottom:0}.dish-line .dish-wrapper .dish-inner .item-image{flex-shrink:0}.dish-line .dish-wrapper .dish-inner .item-image img{max-width:17.5mm;height:auto!important}.dish-line .dish-wrapper .dish-inner .item-image.square .square-bg{height:20mm;width:20mm;background-size:cover;background-position:center center}.dish-line.has-image .item-image{padding-left:var(--indent-text)}.dish-line.has-image .dish-item{padding-left:0}.dish-line .alcohol,.dish-line .dish-item,.separator-description-secondary,.separator-line{padding-left:var(--indent-text)}.dish-line.has-image .dish-inner{align-items:center}.dish-line.has-translation.bev .origin-method,.dish-line.has-translation.dis .origin-method{display:inline-block;color:var(--color-text-secondary)}.dish-line.has-translation.win .origin-vintage:before{content:""}.dish-line.has-translation.win .origin-method:before{content:"("}.dish-line.has-translation.win .origin-method:after{content:")"}.dish-line.has-winery:not(.has-translation) .origin-method:before{content:"("}.dish-line.has-winery:not(.has-translation) .origin-method:after{content:")"}.dish-line .dish-name .secondary-language{color:var(--color-text-secondary)}.dish-line.has-price:not(.has-variants) .dish-item:not(.inline-price) .price{padding-left:4mm}.dish-line .nutrition-values{display:block;padding-top:5pt;font-size:var(--size-footnote);font-weight:var(--weight-footnote);line-height:var(--line-height-footnote);color:var(--color-text-secondary)}.separator-line{font-family:var(--font-text);font-weight:var(--weight-text);font-size:var(--size-text);line-height:var(--line-height-text);color:var(--color-icons)}body.rtl .dish-line .alcohol,body.rtl .dish-line .dish-item,body.rtl .separator-description-secondary,body.rtl .separator-line{padding-left:0;padding-right:var(--indent-text)}.menu-details{display:block}.menu-details .endtext .secondary-language{color:var(--color-text-secondary)}.legend-item{color:var(--color-text)}.dish-line.section-variant-header:not(.different-variants){width:100%}.dish-line.section-variant-header:not(.different-variants) .variant-name{display:none}.dish-line.section-variant-header:not(.different-variants) .dish-wrapper{justify-content:space-between}.dish-line.section-variant-header:not(.different-variants) .dish-details{flex-basis:auto;flex-grow:1}.dish-line.section-variant-header:not(.different-variants) .price{flex-basis:auto;white-space:nowrap}.dish-line.section-variant-header:not(.different-variants) .price .variant{display:inline-block;text-align:right;box-sizing:border-box}.dish-line.section-variant-header:not(.different-variants).shift-variant .price.short-price:after,.dish-line.section-variant-header:not(.different-variants).shift-variant .price.short-variant:after{content:'';display:inline-block;box-sizing:border-box;height:var(--line-height-text)}.back-cover{page:content;page-break-before:always}.back-cover img{display:block;margin:0 auto;max-width:100%;max-height:85mm}</style>
+<style>.legend{position:relative!important;bottom:auto!important;max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(0,1,0,1);margin-top:10px;padding:0;box-sizing:border-box}.legend-style-columns .legend-item,.menu.search .dishes-block:not([data-show=true]){margin:0}.legend .legend-item .allergen-symbol,.legend .legend-item .label-symbol{font-size:var(--size-icons)}.legend.show{max-height:calc(100vh - 66px);overflow-y:auto;transition:max-height .5s ease-in-out}.legend.show.legend-style-list,.legend.show.legend-style-list-titled{padding-bottom:20px}.legend-style-columns{flex-wrap:wrap}.legend-style-columns .legend-block{min-width:230px;padding-bottom:20px}.legend-style-columns .legend-title{margin-bottom:0}.legend-style-list-titled::before,.legend-style-list::before{content:unset!important}.legend-style-list .legend-item,.legend-style-list-titled .legend-item{white-space:nowrap}@media all and (min-width:601px){.main{padding:50px}.secondary{padding:0 50px}.secondary .legend,.secondary h3{max-width:1096px}}.main .menu .additive-symbol{font-size:8pt;line-height:12pt;width:12pt;height:12pt}.dishes-block{overflow:hidden;transition:height .3s ease-out,.3s margin ease-in-out;height:auto}.section-line[data-toggled=false] .section-price.headers-only{display:none}.menu.search .dishes-block{height:auto!important}.menu.search .dishes-block:not([data-show=true]) .section-description,.menu.search .section-line{display:none}.menu.search .section-line[data-search=true]{display:block}.menu.search .section-line[data-search=true] .item-image,.menu.search .section-line[data-search=true] .section-description,.menu.search .separator-description-secondary{display:none}.menu.search .section-line[data-search=true].has-image .section{padding:0}.menu.search .section-line:not([data-search=true])+.dishes-block{margin:0!important}@media (min-width:601px){.menu .dish-line .price .variant{padding-left:2mm}.menu .dish-line .price .variant:first-child{padding-left:0}}@media (max-width:600px){.menu .dish-line.has-variants .dish-inner{display:block}}.footnote{margin-top:20px;font-size:15px;line-height:18px}@media all and (max-width:480px){.alcohol-mobile{display:inline-block;font-style:italic}.alcohol{display:none}}@media all and (max-width:440px){.menu .section-line.has-image .section-wrapper{display:block}.menu .section-line.has-image .item-image{text-align:center}.menu .section-line.has-image .section{padding-left:0}}</style>
+<style>
+      :root {
+        --color-title: #1565c0;
+      }
+      :root {
+        --color-subtitle: #4EC23E;
+      }
+      :root {
+        --color-section: #1976d2;
+      }
+      :root {
+        --color-subsection: #1e88e5;
+      }
+      :root {
+        --color-text: #1e88e5;
+      }
+      :root {
+        --color-price: #484848;
+      }
+      :root {
+        --color-text-secondary: #92a48f;
+      }
+      :root {
+        --color-footnote: #92A48F;
+      }
+      :root {
+        --color-icons: #92A48F;
+        --color-accent: #92A48F;
+      }
+      :root {
+        --color-declarations: #082C03;
+      }
+      :root {
+        --color-panel: #e1f5fe;
+      }
+      :root {
+        --color-divider: #42a5f5;
+      }
+      :root {
+        --color-page: #faf8e8;
+      }
+
+      :root {
+        --font-title: 'Limelight';
+      }
+      :root {
+        --font-subtitle: 'Montserrat';
+      }
+      :root {
+        --font-section: 'Comfortaa';
+      }
+      :root {
+        --font-subsection: 'Comfortaa';
+      }
+      :root {
+        --font-text: 'Amaranth';
+      }
+      :root {
+        --font-price: 'Josefin Sans';
+      }
+      :root {
+        --font-text-secondary: 'Josefin Sans';
+      }
+      :root {
+        --font-footnote: 'Josefin Sans';
+      }
+      :root {
+        --font-declarations: 'Josefin Sans';
+      }
+
+      :root {
+        --weight-title: 400;
+      }
+      :root {
+        --weight-subtitle: 300;
+      }
+      :root {
+        --weight-section: 400;
+      }
+      :root {
+        --weight-subsection: 700;
+      }
+      :root {
+        --weight-text: 400;
+      }
+      :root {
+        --weight-price: 300;
+      }
+      :root {
+        --weight-text-secondary: 300;
+      }
+      :root {
+        --weight-footnote: 700;
+      }
+      :root {
+        --weight-declarations: 400;
+      }
+
+      :root {
+        --capitalisation-title: uppercase;
+      }
+      :root {
+        --capitalisation-subtitle: uppercase;
+      }
+      :root {
+        --capitalisation-section: uppercase;
+      }
+      :root {
+        --capitalisation-subsection: uppercase;
+      }
+      :root {
+        --capitalisation-text: none;
+      }
+      :root {
+        --capitalisation-price: none;
+      }
+      :root {
+        --capitalisation-text-secondary: none;
+      }
+      :root {
+        --capitalisation-footnote: uppercase;
+      }
+    :root {
+      --letter-spacing-title: 0.0pt;
+      --letter-spacing-subtitle: 0.0pt;
+      --letter-spacing-section: 0.0pt;
+      --letter-spacing-subsection: 0.0pt;
+      --letter-spacing-text: 0.0pt;
+      --letter-spacing-text-secondary: 0.0pt;
+      --letter-spacing-price: 0.0pt;
+      --letter-spacing-footnote: 0.0pt;
+      --letter-spacing-declarations: 0.0pt;
+
+      --font-style-title: normal;
+      --font-style-subtitle: normal;
+      --font-style-section: normal;
+      --font-style-subsection: normal;
+      --font-style-text: normal;
+      --font-style-text-secondary: normal;
+      --font-style-price: normal;
+      --font-style-footnote: normal;
+    }
+    :root {
+      --size-title: 37.5pt;
+      --size-subtitle: 18.0pt;
+      --size-section: 24.0pt;
+      --size-subsection: 21.0pt;
+      --size-text: 16.5pt;
+      --size-price: 16.5pt;
+      --size-text-secondary: 15.0pt;
+      --size-footnote: 13.5pt;
+      --size-icons: 24.0pt;
+      --size-pictograms: 18.0pt;
+        --size-declarations: 13.5pt;
+      --line-height-title: 41.5pt;
+      --line-height-subtitle: 22.0pt;
+      --line-height-section: 28.0pt;
+      --line-height-subsection: 25.0pt;
+      --line-height-text: 19.5pt;
+      --line-height-price: 19.5pt;
+      --line-height-text-secondary: 18.0pt;
+      --line-height-footnote: 16.5pt;
+        --line-height-declarations: 16.5pt;
+      --alignment-pagetop: center;
+      --alignment-section: center;
+      --alignment-subsection: center;
+      --alignment-text: center;
+      --alignment-detail: center;
+      --alignment-legend: right;
+      --align-enddescription: left;
+      
+      --indent-title: 0.0mm;
+      --indent-subtitle: 0.0mm;
+      --indent-section: 0.0mm;
+      --indent-subsection: 0.0mm;
+      --indent-text: 0.0mm;
+      --indent-text-secondary: 0.0mm;
+      --indent-footnote: 10.0mm;
+
+      --line-above-title-style: solid;
+      --line-below-title-style: solid;
+      --line-above-subtitle-style: solid;
+      --line-below-subtitle-style: solid;
+      --line-above-section-style: solid;
+      --line-below-section-style: solid;
+      --line-above-subsection-style: solid;
+      --line-below-subsection-style: solid;
+      --line-below-text-style: solid;
+      --line-above-footnote-style: solid;
+      --line-between-columns-style: solid;
+    }
+    .dish-number {
+      flex-shrink: 0;
+      flex-basis: 8.5mm;
+      color: var(--color-icons);
+      font-size: var(--size-text-secondary);
+      line-height: var(--line-height-text);
+    }
+    @media only screen and (max-width: 730px) {
+      :root {
+      }
+    }
+
+    .section-line.highlight.highlight-type-5,
+    .section-line.highlight.highlight-type-5 .section-wrapper,
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line,
+    .section-line.highlight.highlight-type-5 + .dishes-block .section-line,
+    .section-line.highlight.highlight-type-5 + .dishes-block .separator-line,
+    .section-line.highlight.highlight-type-5 + .dishes-block .section-description,
+    .section-line.highlight.highlight-type-5 > .section-description,
+
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .dish-wrapper .dish-inner .dish .dish-description,
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .alcohol,
+    .section-line.highlight.highlight-type-5 + .dishes-block .dish-line .dish-item,
+    .section-line.highlight.highlight-type-5 + .dishes-block .separator-description-secondary,
+    .section-line.highlight.highlight-type-5 + .dishes-block .separator-line {
+      padding-left: 0;
+    }
+    .section-line.highlight.highlight-type-5 + .dishes-block .checkbox-wrapper {
+      display: none;
+    }
+
+    @page {
+      font-family: var(--font-text);
+      font-size: var(--size-footnote);
+      line-height: var(--line-height-footnote);
+      color: var(--color-text-secondary);
+    }
+
+    .main,
+    .secondary {
+      box-sizing: border-box;
+      font-family: var(--font-text);
+      font-size: var(--size-text);
+      line-height: var(--line-height-text);
+      color: var(--color-text);
+      letter-spacing: var(--letter-spacing-text);
+      font-style: var(--font-style-text);
+    }
+
+    .paper-footnote,
+    .footnote {
+      font-family: var(--font-footnote);
+      font-size: var(--size-footnote);
+      line-height: var(--line-height-footnote);
+      color: var(--color-footnote);
+      font-weight: var(--weight-footnote);
+      letter-spacing: var(--letter-spacing-footnote);
+      font-style: var(--font-style-footnote);
+    }
+    .separator-description-secondary {
+      letter-spacing: var(--letter-spacing-text-secondary);
+    }
+      .header-title-wrapper .separator-description-secondary,
+      .dish-line + .separator-description-secondary {
+        margin-top: 6.0mm;
+      }
+    .menu-details {
+      margin-top: 10.0mm;
+    }
+    .dish-line .price,
+    .section-line .section-price {
+      font-family: var(--font-price);
+      font-size: var(--size-price);
+      line-height: var(--line-height-price);
+      font-weight: var(--weight-price);
+      color: var(--color-price);
+      letter-spacing: var(--letter-spacing-price);
+      font-style: var(--font-style-price);
+    }
+      .dish-line .price,
+      .section-line .section-price {
+        text-transform: var(--capitalisation-price);
+      }
+      .menu-details {
+        margin-top: 10.0mm;
+      }
+      .paper-footnote,
+    .footnote {
+        text-transform: var(--capitalisation-footnote);
+      }
+    .dish-line .price, .section-line .section-price {
+      text-align: right;
+    }
+    .section-line.level-1 .section-line .section-price:not(.headers-only) {
+      text-align: center;
+    }
+    .section-line.level-2 .section-line .section-price:not(.headers-only) {
+      text-align: center;
+    }
+      .section-line.level-3 .section-description {
+        text-align: center;
+      }
+      .dish-line .price, .section-line .section-price {
+        text-align: center;
+      }
+      .section-line.level-1:not(.highlight-type-4) .section-wrapper::after,
+      .section-line.level-2.highlight.highlight-type-4 .section-wrapper::after {
+        content: '';
+        display: block;
+
+        box-sizing: border-box;
+        margin-top: 6.0pt;
+        margin-bottom: 2.5mm;
+        width: 8%;
+        margin-right: auto;
+        margin-left: 0;
+
+        border-bottom-color: var(--color-divider);
+        border-bottom-width: 2.0pt;
+        border-bottom-style: var(--line-below-section-style);
+      }
+        .section-line.level-1:not(.highlight-type-4) .section-wrapper::after,
+        .section-line.level-2.highlight.highlight-type-4 .section-wrapper::after {
+          margin-top: 6.0pt;
+          margin-bottom: 3.5mm;
+        }
+        .section-line.level-1:not(.highlight-type-4) .section-wrapper::after,
+        .section-line.level-2.highlight.highlight-type-4 .section-wrapper::after {
+          margin-right: auto;
+          margin-left: auto;
+        }
+    .alcohol {
+      font-family: var(--font-text-secondary);
+      font-size: var(--size-text-secondary);
+      line-height: var(--line-height-text-secondary);
+      color: var(--color-text-secondary);
+      letter-spacing: var(--letter-spacing-text-secondary);
+      font-style: var(--font-style-text-secondary);
+        text-transform: var(--capitalisation-text-secondary);
+    }
+    .menutech-font,
+    .allergen-symbol,
+    .label-symbol {
+      font-family: 'menutech';
+    }
+
+    .legend {
+      padding-left: 0.0mm;
+      box-sizing: border-box;
+      font-family: var(--font-footnote);
+      font-size: var(--size-footnote);
+      font-weight: var(--weight-footnote);
+      line-height: 17.5pt;
+      letter-spacing: var(--letter-spacing-footnote);
+      font-style: var(--font-style-footnote);
+    }
+    .legend .allergen-symbol,
+    .legend .label-symbol {
+      line-height: 17.5pt;
+    }
+
+      .dish-line.highlight {
+        padding: 5mm;
+        box-sizing: border-box;
+      }
+      .dish-line.highlight .dish-name,
+      .dish-line.highlight .dish,
+      .dish-line.highlight .dish-description,
+      .dish-line.highlight .dish-wrapper {
+        padding-left: 0!important;
+      }
+      .dish-line.highlight {
+        border-width: .25pt;
+        border-style: solid;
+        border-color: var(--color-divider);
+      }
+    hr {
+      color: var(--color-divider);
+    }
+    .endtext-secondary {
+      font-family: var(--font-text-secondary);
+      font-size: var(--size-text-secondary);
+      font-weight: var(--weight-text-secondary);
+      line-height: var(--line-height-text-secondary);
+      letter-spacing: var(--letter-spacing-text-secondary);
+      font-style: var(--font-style-text-secondary);
+      color: var(--color-text-secondary);
+    }
+    .endtext-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    .endtext-wrapper .primary-language p:first-child {
+      margin-top: 0;
+    }
+    .menu-variants-wrapper + .endtext-wrapper,
+    .menu-wine + .endtext-wrapper,
+    .menu-wine + .menu-variants-wrapper {
+      margin-top: 4mm;
+    }
+      .endtext-wrapper .primary-language p:last-child {
+        margin-bottom: 0;
+      }
+    .endtext {
+      color: var(--color-text);
+    }
+    .endtext > p:last-child {
+      margin-bottom: 0;
+    }
+    .endtext .secondary-language {
+      color: var(--color-text-secondary);
+      page-break-inside: avoid;
+    }
+      .endtext {
+        padding: 5mm;
+        border-width: .25pt;
+        border-style: solid;
+        border-color: var(--color-divider);
+      }
+      .menu-details,
+      .menu-variants-wrapper {
+        text-align: center;
+        justify-content: center;
+      }
+      .endtext-secondary,
+      .menu-variants-wrapper {
+        text-align: center;
+      }
+    .menu-variants {
+      display: inline-block;
+    }
+    .menu-variants .menu-variant {
+      white-space: nowrap;
+    }
+    .menu-variants .menu-variant .secondary-language {
+      font-style: italic;
+    }
+    .menu-variants .menu-variant .secondary-language:before {
+      content: " · ";
+    }
+      .menu-variants {
+        padding: 5mm;
+        background-color: var(--color-panel);
+      }
+    .separator-description-secondary .inner-wrapper {
+      page-break-inside: avoid;
+    }
+      .main .menu .dish-line .item-image.square.square-contain .square-bg {
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .main .menu .section-line .item-image.square.square-contain .square-bg {
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .show-orders {
+        display: none;
+      }
+    [data-admin="true"],
+    [data-vip="true"],
+    [data-diet-restriction="true"] {
+      display: none;
+    }
+      .dishes-block:has(> .dish-line.show-orders:first-child:last-child) {
+        display: none;
+      }
+      .show-pdf {
+        display: none!important;
+      }
+      .section-line.show-pdf + .dishes-block-nonhierarchical {
+        display: none;
+      }
+    .dish-line .dish-wrapper .dish-inner .price .variant.short-variant {
+      display: inline-block;
+    }
+
+    .section-line.has-variants .section-price.headers-only .variant {
+      display: inline-block;
+      text-align: right;
+    }
+
+    .section-price.headers-only {
+      display: block;
+    }
+
+      .dish-line.has-variants .dish-wrapper .dish-inner .price .variant.short-variant:not(:first-child) {
+        padding: 0;
+      }
+    .dish-line.section-variant-header:not(.different-variants) {
+      width: 100%;
+    }
+
+    .dish-line.section-variant-header:not(.different-variants) .variant-name,
+    .dish-line.section-variant-header:not(.different-variants) .variant-between-price-separator {
+      display: none;
+    }
+
+    .dish-line.section-variant-header:not(.different-variants) .dish-wrapper {
+      justify-content: space-between;
+    }
+
+    .dish-line.section-variant-header:not(.different-variants) .dish-details {
+      width: 100%;
+    }
+
+    .dish-line.section-variant-header:not(.different-variants) .price {
+      flex-basis: content;
+      white-space: nowrap;
+    }
+
+    .dish-line.section-variant-header:not(.different-variants) .price .variant {
+      display: inline-block;
+      text-align: right;
+      box-sizing: border-box;
+    }
+
+    .dish-line.section-variant-header:not(.different-variants).shift-variant .price.short-variant-name::after,
+    .dish-line.section-variant-header:not(.different-variants).shift-variant .price.short-price::after {
+      content: '';
+      display: inline-block;
+      padding: 0;
+      box-sizing: border-box;
+      height: var(--line-height-text);
+    }
+
+    .glightbox-clean .gslide-title {
+      margin: 0;
+      font-family: var(--font-text);
+    }
+
+  </style>
+<style>
+  .coverpage + .coverpage {
+    page-break-before: always;
+  }
+  /* Workaround Chrome OCR Bug */
+  .coverpage .coverpage-content:has(>img:first-child)::before {
+    content: " Invisible ";
+    line-height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+  }
+  /* End Workaround */
+</style><style>
+    .legend {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      display: block;
+      width: 100%;
+      text-align: left;
+      page-break-inside: avoid;
+      padding-left: 0.0mm;
+      box-sizing: border-box;
+    }
+      .legend {
+        text-align: right;
+      }
+    .legend .labels,
+    .legend .allergens,
+    .legend .additives {
+      line-height: var(--line-height-footnote);
+    }
+
+    .legend .legend-title {
+      font-weight: bold;
+    }
+
+    .legend .legend-title:after {
+      content: ':';
+    }
+
+    .legend .legend-item {
+      display: inline;
+    }
+
+    .legend .additives .additive-symbol {
+      position: relative;
+      top: -0.5mm;
+    }
+
+    .legend .label,
+    .legend .allergen,
+    .legend .additive {
+      font-style: normal;
+    }
+
+    .legend .label-symbol,
+    .legend .allergen-symbol {
+      margin: -2mm 0;
+      font-size: 13.0pt;
+      line-height: 17.0pt;
+    }
+
+    .label-name,
+      .allergen-name,
+      .additive-name {
+        white-space: normal;
+      }
+
+    .legend .secondary-language:before {
+      content: " - ";
+    }
+    .symbol-column {
+      white-space: nowrap;
+    }
+</style> </head>
+<body class="">
+</div> <div class="fade-in" id="content">
+<div class="main">
+<div class="menu multi-level" id="items">
+<div class="section-line sec level-1 has-image" data-level="1" data-section="Petit Déjeuner" data-section-baselang="Petit Déjeuner" data-target="dishes-block" data-toggle="collapsible" data-toggled="true">
+<div class="section-wrapper">
+<div class="item-image separator-image square"><div class="square-bg" style="background-image: url('https://api.menutech.com/media/background_images/597345143_1484837932624865_2488369290889004588_n.png');"></div></div> <div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Petit Déjeuner</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="true">
+<div class="dish-line dis has-price has-description" data-description="Café aux choix, Jus, Eau 0.5L, Viennoiserie" data-id="32722519" data-name="Sucré" data-name-base="Sucré" data-origin="" data-price="6.0" data-section-sorting="1" data-separator-level1="Petit Déjeuner" data-separator-level1-base="Petit Déjeuner" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="1" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Sucré</span></span> </div>
+<div class="dish-description has-translations"><span class="item primary-language"><p>Café aux choix, Jus, Eau 0.5L, Viennoiserie</p></span></div> </div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">6</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price has-description" data-description="Café aux choix, Jus, Eau 0.5L, Mini omelette OU Mini crêpe OU Croissant salé" data-id="32722520" data-name="Salé" data-name-base="Salé" data-origin="" data-price="7.0" data-section-sorting="1" data-separator-level1="Petit Déjeuner" data-separator-level1-base="Petit Déjeuner" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="2" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Salé</span></span> </div>
+<div class="dish-description has-translations"><span class="item primary-language"><p>Café aux choix, Jus, Eau 0.5L, Mini omelette OU Mini crêpe OU Croissant salé</p></span></div> </div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price has-description" data-description="Café aux choix, Jus, Eau 0.5L, Omelette Classique OU mini Crêpe(salée/sucrée) OU Croissant salé, Confiture, Beurre, Chemia, Fondant." data-id="32722521" data-name="Pélé" data-name-base="Pélé" data-origin="" data-price="12.0" data-section-sorting="1" data-separator-level1="Petit Déjeuner" data-separator-level1-base="Petit Déjeuner" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="3" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Pélé</span></span> </div>
+<div class="dish-description has-translations"><span class="item primary-language"><p>Café aux choix, Jus, Eau 0.5L, Omelette Classique OU mini Crêpe(salée/sucrée) OU Croissant salé, Confiture, Beurre, Chemia, Fondant.</p></span></div> </div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">12</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price has-description" data-description="2 Cafés aux choix, 2 Jus, Eau 1L, 2 Omelettes classiques OU 2 mini Crêpes(Salées/Sucrées) OU 2 Croissants(Salés/Sucrés), Confiture, Beurre, Chemia, Fondant" data-id="32722522" data-name="Bahri" data-name-base="Bahri" data-origin="" data-price="24.0" data-section-sorting="1" data-separator-level1="Petit Déjeuner" data-separator-level1-base="Petit Déjeuner" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="4" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Bahri</span></span> </div>
+<div class="dish-description has-translations"><span class="item primary-language"><p>2 Cafés aux choix, 2 Jus, Eau 1L, 2 Omelettes classiques OU 2 mini Crêpes(Salées/Sucrées) OU 2 Croissants(Salés/Sucrés), Confiture, Beurre, Chemia, Fondant</p></span></div> </div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">24</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price has-description" data-description="4 Cafés aux choix, 4 Citronades, Eau 1L, 4 Omelettes, 4 (Fondants/Pancakes/Crepes Sucrées), Confiture, Fromage, Beurre, Chemia, Huile d'olive, Dates, Bsissa, Charcuterie, Viennoiserie" data-id="32722524" data-name="Brunch EL Bahri" data-name-base="Brunch EL Bahri" data-origin="" data-price="50.0" data-section-sorting="1" data-separator-level1="Petit Déjeuner" data-separator-level1-base="Petit Déjeuner" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="5" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Brunch EL Bahri</span></span> </div>
+<div class="dish-description has-translations"><span class="item primary-language"><p>4 Cafés aux choix, 4 Citronades, Eau 1L, 4 Omelettes, 4 (Fondants/Pancakes/Crepes Sucrées), Confiture, Fromage, Beurre, Chemia, Huile d'olive, Dates, Bsissa, Charcuterie, Viennoiserie</p></span></div> </div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">50</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Café" data-section-baselang="Café" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Café</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722525" data-name="Express" data-name-base="Express" data-origin="" data-price="3.0" data-section-sorting="2" data-separator-level1="Café" data-separator-level1-base="Café" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="7" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Express</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">3</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722526" data-name="Capucin" data-name-base="Capucin" data-origin="" data-price="3.2" data-section-sorting="2" data-separator-level1="Café" data-separator-level1-base="Café" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="8" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Capucin</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">3,2</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722527" data-name="Americano" data-name-base="Americano" data-origin="" data-price="3.5" data-section-sorting="2" data-separator-level1="Café" data-separator-level1-base="Café" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="9" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Americano</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">3,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722528" data-name="Cappuccino" data-name-base="Cappuccino" data-origin="" data-price="3.8" data-section-sorting="2" data-separator-level1="Café" data-separator-level1-base="Café" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="10" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Cappuccino</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">3,8</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722529" data-name="Café crème" data-name-base="Café crème" data-origin="" data-price="4.0" data-section-sorting="2" data-separator-level1="Café" data-separator-level1-base="Café" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="11" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Café crème</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">4</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722530" data-name="Café Turc" data-name-base="Café Turc" data-origin="" data-price="4.0" data-section-sorting="2" data-separator-level1="Café" data-separator-level1-base="Café" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="12" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Café Turc</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">4</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Latté" data-section-baselang="Latté" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Latté</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722531" data-name="Latté Caramel" data-name-base="Latté Caramel" data-origin="" data-price="5.0" data-section-sorting="3" data-separator-level1="Latté" data-separator-level1-base="Latté" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="14" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Latté Caramel</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722532" data-name="Latté Vanille" data-name-base="Latté Vanille" data-origin="" data-price="5.0" data-section-sorting="3" data-separator-level1="Latté" data-separator-level1-base="Latté" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="15" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Latté Vanille</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722533" data-name="Latté Noisette" data-name-base="Latté Noisette" data-origin="" data-price="5.0" data-section-sorting="3" data-separator-level1="Latté" data-separator-level1-base="Latté" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="16" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Latté Noisette</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722534" data-name="Latté Nutella" data-name-base="Latté Nutella" data-origin="" data-price="6.5" data-section-sorting="3" data-separator-level1="Latté" data-separator-level1-base="Latté" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="17" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Latté Nutella</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">6,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722535" data-name="Latté Speculoos" data-name-base="Latté Speculoos" data-origin="" data-price="6.5" data-section-sorting="3" data-separator-level1="Latté" data-separator-level1-base="Latté" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="18" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Latté Speculoos</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">6,5</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Iced Coffee" data-section-baselang="Iced Coffee" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Iced Coffee</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722536" data-name="Iced Coffee Caramel" data-name-base="Iced Coffee Caramel" data-origin="" data-price="5.5" data-section-sorting="4" data-separator-level1="Iced Coffee" data-separator-level1-base="Iced Coffee" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="20" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Iced Coffee Caramel</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722537" data-name="Iced Coffee Vanille" data-name-base="Iced Coffee Vanille" data-origin="" data-price="5.5" data-section-sorting="4" data-separator-level1="Iced Coffee" data-separator-level1-base="Iced Coffee" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="21" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Iced Coffee Vanille</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722538" data-name="Iced Coffee Noisette" data-name-base="Iced Coffee Noisette" data-origin="" data-price="5.5" data-section-sorting="4" data-separator-level1="Iced Coffee" data-separator-level1-base="Iced Coffee" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="22" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Iced Coffee Noisette</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722539" data-name="Iced Coffee Nutella" data-name-base="Iced Coffee Nutella" data-origin="" data-price="5.5" data-section-sorting="4" data-separator-level1="Iced Coffee" data-separator-level1-base="Iced Coffee" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="23" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Iced Coffee Nutella</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5,5</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Frappuccino" data-section-baselang="Frappuccino" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Frappuccino</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722540" data-name="Frappuccino Caramel" data-name-base="Frappuccino Caramel" data-origin="" data-price="7.5" data-section-sorting="5" data-separator-level1="Frappuccino" data-separator-level1-base="Frappuccino" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="25" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Frappuccino Caramel</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722541" data-name="Frappuccino Speculoos" data-name-base="Frappuccino Speculoos" data-origin="" data-price="7.5" data-section-sorting="5" data-separator-level1="Frappuccino" data-separator-level1-base="Frappuccino" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="26" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Frappuccino Speculoos</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722542" data-name="Frappuccino Caramel Cookies" data-name-base="Frappuccino Caramel Cookies" data-origin="" data-price="8.5" data-section-sorting="5" data-separator-level1="Frappuccino" data-separator-level1-base="Frappuccino" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="27" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Frappuccino Caramel Cookies</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">8,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722543" data-name="Frappuccino Nutella" data-name-base="Frappuccino Nutella" data-origin="" data-price="8.5" data-section-sorting="5" data-separator-level1="Frappuccino" data-separator-level1-base="Frappuccino" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="28" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Frappuccino Nutella</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">8,5</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Boissons" data-section-baselang="Boissons" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Boissons</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722544" data-name="Eau 0.5 L" data-name-base="Eau 0.5 L" data-origin="" data-price="1.5" data-section-sorting="6" data-separator-level1="Boissons" data-separator-level1-base="Boissons" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="30" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Eau 0.5 L</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">1,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722545" data-name="Eau 1 L" data-name-base="Eau 1 L" data-origin="" data-price="2.5" data-section-sorting="6" data-separator-level1="Boissons" data-separator-level1-base="Boissons" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="31" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Eau 1 L</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">2,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722546" data-name="Canette" data-name-base="Canette" data-origin="" data-price="3.0" data-section-sorting="6" data-separator-level1="Boissons" data-separator-level1-base="Boissons" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="32" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Canette</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">3</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722547" data-name="Boisson énergétique" data-name-base="Boisson énergétique" data-origin="" data-price="7.0" data-section-sorting="6" data-separator-level1="Boissons" data-separator-level1-base="Boissons" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="33" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Boisson énergétique</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Thé" data-section-baselang="Thé" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Thé</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722548" data-name="Thé Menthe Frais" data-name-base="Thé Menthe Frais" data-origin="" data-price="2.8" data-section-sorting="7" data-separator-level1="Thé" data-separator-level1-base="Thé" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="35" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Thé Menthe Frais</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">2,8</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722549" data-name="Thé infusion aux choix" data-name-base="Thé infusion aux choix" data-origin="" data-price="3.5" data-section-sorting="7" data-separator-level1="Thé" data-separator-level1-base="Thé" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="36" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Thé infusion aux choix</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">3,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722550" data-name="Thé aux amandes" data-name-base="Thé aux amandes" data-origin="" data-price="4.5" data-section-sorting="7" data-separator-level1="Thé" data-separator-level1-base="Thé" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="37" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Thé aux amandes</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">4,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722551" data-name="Thé Baklawa" data-name-base="Thé Baklawa" data-origin="" data-price="5.5" data-section-sorting="7" data-separator-level1="Thé" data-separator-level1-base="Thé" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="38" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Thé Baklawa</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5,5</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Smoothies" data-section-baselang="Smoothies" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Smoothies</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722552" data-name="Smoothie Banane" data-name-base="Smoothie Banane" data-origin="" data-price="7.5" data-section-sorting="8" data-separator-level1="Smoothies" data-separator-level1-base="Smoothies" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="40" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Smoothie Banane</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722553" data-name="Smoothie Fraise" data-name-base="Smoothie Fraise" data-origin="" data-price="7.5" data-section-sorting="8" data-separator-level1="Smoothies" data-separator-level1-base="Smoothies" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="41" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Smoothie Fraise</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722554" data-name="Smoothie Blueberry" data-name-base="Smoothie Blueberry" data-origin="" data-price="7.5" data-section-sorting="8" data-separator-level1="Smoothies" data-separator-level1-base="Smoothies" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="42" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Smoothie Blueberry</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722555" data-name="Smoothie Fruits Rouges" data-name-base="Smoothie Fruits Rouges" data-origin="" data-price="7.5" data-section-sorting="8" data-separator-level1="Smoothies" data-separator-level1-base="Smoothies" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="43" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Smoothie Fruits Rouges</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722556" data-name="Smoothie Fruit de passion" data-name-base="Smoothie Fruit de passion" data-origin="" data-price="7.5" data-section-sorting="8" data-separator-level1="Smoothies" data-separator-level1-base="Smoothies" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="44" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Smoothie Fruit de passion</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Jus" data-section-baselang="Jus" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Jus</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722557" data-name="Jus Citron" data-name-base="Jus Citron" data-origin="" data-price="3.5" data-section-sorting="9" data-separator-level1="Jus" data-separator-level1-base="Jus" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="46" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Jus Citron</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">3,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722558" data-name="Jus Orange" data-name-base="Jus Orange" data-origin="" data-price="4.0" data-section-sorting="9" data-separator-level1="Jus" data-separator-level1-base="Jus" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="47" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Jus Orange</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">4</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722559" data-name="Jus Fraise" data-name-base="Jus Fraise" data-origin="" data-price="5.0" data-section-sorting="9" data-separator-level1="Jus" data-separator-level1-base="Jus" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="48" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Jus Fraise</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722560" data-name="Jus Banane" data-name-base="Jus Banane" data-origin="" data-price="6.0" data-section-sorting="9" data-separator-level1="Jus" data-separator-level1-base="Jus" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="49" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Jus Banane</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">6</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Chocolat chaud" data-section-baselang="Chocolat chaud" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Chocolat chaud</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722561" data-name="Chocolat Chaud" data-name-base="Chocolat Chaud" data-origin="" data-price="5.0" data-section-sorting="10" data-separator-level1="Chocolat chaud" data-separator-level1-base="Chocolat chaud" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="51" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Chocolat Chaud</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722562" data-name="Chocolat Chaud Caramel" data-name-base="Chocolat Chaud Caramel" data-origin="" data-price="6.0" data-section-sorting="10" data-separator-level1="Chocolat chaud" data-separator-level1-base="Chocolat chaud" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="52" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Chocolat Chaud Caramel</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">6</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722563" data-name="Chocolat Chaud Banane Fruits Secs" data-name-base="Chocolat Chaud Banane Fruits Secs" data-origin="" data-price="7.0" data-section-sorting="10" data-separator-level1="Chocolat chaud" data-separator-level1-base="Chocolat chaud" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="53" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Chocolat Chaud Banane Fruits Secs</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Mojitos" data-section-baselang="Mojitos" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Mojitos</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line bev has-price" data-description="" data-id="32722564" data-name="Mojito Virgin" data-name-base="Mojito Virgin" data-origin="" data-price="6.0" data-section-sorting="11" data-separator-level1="Mojitos" data-separator-level1-base="Mojitos" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="55" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Mojito Virgin</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">6</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722565" data-name="Mojito Kiwi" data-name-base="Mojito Kiwi" data-origin="" data-price="7.0" data-section-sorting="11" data-separator-level1="Mojitos" data-separator-level1-base="Mojitos" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="56" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Mojito Kiwi</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722566" data-name="Mojito Fraise" data-name-base="Mojito Fraise" data-origin="" data-price="7.0" data-section-sorting="11" data-separator-level1="Mojitos" data-separator-level1-base="Mojitos" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="57" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Mojito Fraise</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722567" data-name="Mojito Bleu" data-name-base="Mojito Bleu" data-origin="" data-price="7.0" data-section-sorting="11" data-separator-level1="Mojitos" data-separator-level1-base="Mojitos" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="58" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Mojito Bleu</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722568" data-name="Mojito Fruit de Passion" data-name-base="Mojito Fruit de Passion" data-origin="" data-price="7.0" data-section-sorting="11" data-separator-level1="Mojitos" data-separator-level1-base="Mojitos" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="59" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Mojito Fruit de Passion</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722569" data-name="Mojito Fruits Rouges" data-name-base="Mojito Fruits Rouges" data-origin="" data-price="7.0" data-section-sorting="11" data-separator-level1="Mojitos" data-separator-level1-base="Mojitos" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="60" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Mojito Fruits Rouges</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1 parent-section" data-level="1" data-section="Douceurs" data-section-baselang="Douceurs" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Douceurs</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="section-line sec level-2" data-level="2" data-section="Cheesecakes" data-section-baselang="Cheesecakes" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Cheesecakes</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line dis has-price" data-description="" data-id="32722572" data-name="Cheesecake Nutella" data-name-base="Cheesecake Nutella" data-origin="" data-price="7.0" data-section-sorting="12" data-separator-level1="Douceurs" data-separator-level1-base="Douceurs" data-separator-level2="Cheesecakes" data-separator-level2-base="Cheesecakes" data-separator-level3="" data-separator-level3-base="" data-sorting="63" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Cheesecake Nutella</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722573" data-name="Cheesecake Speculoos" data-name-base="Cheesecake Speculoos" data-origin="" data-price="7.0" data-section-sorting="12" data-separator-level1="Douceurs" data-separator-level1-base="Douceurs" data-separator-level2="Cheesecakes" data-separator-level2-base="Cheesecakes" data-separator-level3="" data-separator-level3-base="" data-sorting="64" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Cheesecake Speculoos</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line bev has-price" data-description="" data-id="32722574" data-name="Cheesecake Oreo" data-name-base="Cheesecake Oreo" data-origin="" data-price="7.5" data-section-sorting="12" data-separator-level1="Douceurs" data-separator-level1-base="Douceurs" data-separator-level2="Cheesecakes" data-separator-level2-base="Cheesecakes" data-separator-level3="" data-separator-level3-base="" data-sorting="65" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name bev"><span class="primary-language">Cheesecake Oreo</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722575" data-name="Cheesecake Ferrero Rocher" data-name-base="Cheesecake Ferrero Rocher" data-origin="" data-price="8.0" data-section-sorting="12" data-separator-level1="Douceurs" data-separator-level1-base="Douceurs" data-separator-level2="Cheesecakes" data-separator-level2-base="Cheesecakes" data-separator-level3="" data-separator-level3-base="" data-sorting="66" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Cheesecake Ferrero Rocher</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">8</span></div></div> </div>
+</div>
+</div>
+<div class="separator-line opt">
+                ou
+              </div>
+</div> <div class="section-line sec level-2" data-level="2" data-section="Fondant" data-section-baselang="Fondant" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Fondant</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line dis has-price" data-description="" data-id="32722576" data-name="Fondant Chocolat" data-name-base="Fondant Chocolat" data-origin="" data-price="4.0" data-section-sorting="12" data-separator-level1="Douceurs" data-separator-level1-base="Douceurs" data-separator-level2="Fondant" data-separator-level2-base="Fondant" data-separator-level3="" data-separator-level3-base="" data-sorting="69" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Fondant Chocolat</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">4</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722577" data-name="Fondant Nutella" data-name-base="Fondant Nutella" data-origin="" data-price="4.5" data-section-sorting="12" data-separator-level1="Douceurs" data-separator-level1-base="Douceurs" data-separator-level2="Fondant" data-separator-level2-base="Fondant" data-separator-level3="" data-separator-level3-base="" data-sorting="70" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Fondant Nutella</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">4,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722578" data-name="Fondant Pistacchio" data-name-base="Fondant Pistacchio" data-origin="" data-price="5.0" data-section-sorting="12" data-separator-level1="Douceurs" data-separator-level1-base="Douceurs" data-separator-level2="Fondant" data-separator-level2-base="Fondant" data-separator-level3="" data-separator-level3-base="" data-sorting="71" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Fondant Pistacchio</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722579" data-name="Fondant Mordjene" data-name-base="Fondant Mordjene" data-origin="" data-price="5.0" data-section-sorting="12" data-separator-level1="Douceurs" data-separator-level1-base="Douceurs" data-separator-level2="Fondant" data-separator-level2-base="Fondant" data-separator-level3="" data-separator-level3-base="" data-sorting="72" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Fondant Mordjene</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5</span></div></div> </div>
+</div>
+</div>
+</div> </div>
+<div class="section-line sec level-1" data-level="1" data-section="Pancakes" data-section-baselang="Pancakes" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Pancakes</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line dis has-price" data-description="" data-id="32722581" data-name="Pancake Classique(Nutella)" data-name-base="Pancake Classique(Nutella)" data-origin="" data-price="7.5" data-section-sorting="13" data-separator-level1="Pancakes" data-separator-level1-base="Pancakes" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="74" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Pancake Classique(Nutella)</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722582" data-name="Pancake Fruits" data-name-base="Pancake Fruits" data-origin="" data-price="9.0" data-section-sorting="13" data-separator-level1="Pancakes" data-separator-level1-base="Pancakes" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="75" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Pancake Fruits</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">9</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722583" data-name="Pancake Fruits Secs" data-name-base="Pancake Fruits Secs" data-origin="" data-price="10.0" data-section-sorting="13" data-separator-level1="Pancakes" data-separator-level1-base="Pancakes" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="76" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Pancake Fruits Secs</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">10</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722584" data-name="Pancake Ferrero Rocher" data-name-base="Pancake Ferrero Rocher" data-origin="" data-price="10.0" data-section-sorting="13" data-separator-level1="Pancakes" data-separator-level1-base="Pancakes" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="77" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Pancake Ferrero Rocher</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">10</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Crêpes Sucrées" data-section-baselang="Crêpes Sucrées" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Crêpes Sucrées</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line dis has-price" data-description="" data-id="32722585" data-name="Crêpe Classique(Nutella)" data-name-base="Crêpe Classique(Nutella)" data-origin="" data-price="7.5" data-section-sorting="14" data-separator-level1="Crêpes Sucrées" data-separator-level1-base="Crêpes Sucrées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="79" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Classique(Nutella)</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722586" data-name="Crêpe Mordjene" data-name-base="Crêpe Mordjene" data-origin="" data-price="7.5" data-section-sorting="14" data-separator-level1="Crêpes Sucrées" data-separator-level1-base="Crêpes Sucrées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="80" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Mordjene</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722587" data-name="Crêpe Banane" data-name-base="Crêpe Banane" data-origin="" data-price="8.5" data-section-sorting="14" data-separator-level1="Crêpes Sucrées" data-separator-level1-base="Crêpes Sucrées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="81" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Banane</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">8,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722588" data-name="Crêpe Fruits Secs" data-name-base="Crêpe Fruits Secs" data-origin="" data-price="8.5" data-section-sorting="14" data-separator-level1="Crêpes Sucrées" data-separator-level1-base="Crêpes Sucrées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="82" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Fruits Secs</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">8,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722589" data-name="Crêpe Speculoos" data-name-base="Crêpe Speculoos" data-origin="" data-price="10.0" data-section-sorting="14" data-separator-level1="Crêpes Sucrées" data-separator-level1-base="Crêpes Sucrées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="83" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Speculoos</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">10</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722590" data-name="Crêpe Oreo" data-name-base="Crêpe Oreo" data-origin="" data-price="10.0" data-section-sorting="14" data-separator-level1="Crêpes Sucrées" data-separator-level1-base="Crêpes Sucrées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="84" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Oreo</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">10</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722591" data-name="Crêpe Ferrero Rocher" data-name-base="Crêpe Ferrero Rocher" data-origin="" data-price="10.0" data-section-sorting="14" data-separator-level1="Crêpes Sucrées" data-separator-level1-base="Crêpes Sucrées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="85" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Ferrero Rocher</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">10</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Crêpes Salées" data-section-baselang="Crêpes Salées" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Crêpes Salées</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line dis has-price" data-description="" data-id="32722592" data-name="Crêpe Jambon Fromage" data-name-base="Crêpe Jambon Fromage" data-origin="" data-price="7.0" data-section-sorting="15" data-separator-level1="Crêpes Salées" data-separator-level1-base="Crêpes Salées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="87" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Jambon Fromage</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722593" data-name="Crêpe Thon Fromage" data-name-base="Crêpe Thon Fromage" data-origin="" data-price="7.5" data-section-sorting="15" data-separator-level1="Crêpes Salées" data-separator-level1-base="Crêpes Salées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="88" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Thon Fromage</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7,5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722594" data-name="Crêpe Escalope" data-name-base="Crêpe Escalope" data-origin="" data-price="9.0" data-section-sorting="15" data-separator-level1="Crêpes Salées" data-separator-level1-base="Crêpes Salées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="89" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Escalope</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">9</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722595" data-name="Crêpe Spéciale(Thon, Jambon)" data-name-base="Crêpe Spéciale(Thon, Jambon)" data-origin="" data-price="10.0" data-section-sorting="15" data-separator-level1="Crêpes Salées" data-separator-level1-base="Crêpes Salées" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="90" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Crêpe Spéciale(Thon, Jambon)</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">10</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Omelettes" data-section-baselang="Omelettes" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Omelettes</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line dis has-price" data-description="" data-id="32722596" data-name="Omelette Classique" data-name-base="Omelette Classique" data-origin="" data-price="6.0" data-section-sorting="16" data-separator-level1="Omelettes" data-separator-level1-base="Omelettes" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="92" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Omelette Classique</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">6</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722597" data-name="Omelette Jambon Fromage" data-name-base="Omelette Jambon Fromage" data-origin="" data-price="7.0" data-section-sorting="16" data-separator-level1="Omelettes" data-separator-level1-base="Omelettes" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="93" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Omelette Jambon Fromage</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722598" data-name="Omelette Thon Fromage" data-name-base="Omelette Thon Fromage" data-origin="" data-price="8.0" data-section-sorting="16" data-separator-level1="Omelettes" data-separator-level1-base="Omelettes" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="94" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Omelette Thon Fromage</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">8</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722599" data-name="Omelette Spéciale(Thon, Jambon)" data-name-base="Omelette Spéciale(Thon, Jambon)" data-origin="" data-price="9.0" data-section-sorting="16" data-separator-level1="Omelettes" data-separator-level1-base="Omelettes" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="95" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Omelette Spéciale(Thon, Jambon)</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">9</span></div></div> </div>
+</div>
+</div>
+</div> <div class="section-line sec level-1" data-level="1" data-section="Panini" data-section-baselang="Panini" data-target="dishes-block" data-toggle="collapsible" data-toggled="false">
+<div class="section-wrapper">
+<div class="section-name-wrapper">
+<h2 class="section-name short-section"><span class="primary-language">Panini</span></h2> </div>
+</div>
+</div>
+<div class="dishes-block" data-show="false">
+<div class="dish-line dis has-price" data-description="" data-id="32722600" data-name="Panini Jambon Fromage" data-name-base="Panini Jambon Fromage" data-origin="" data-price="5.0" data-section-sorting="17" data-separator-level1="Panini" data-separator-level1-base="Panini" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="97" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Panini Jambon Fromage</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">5</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722601" data-name="Panini Thon Fromage" data-name-base="Panini Thon Fromage" data-origin="" data-price="6.0" data-section-sorting="17" data-separator-level1="Panini" data-separator-level1-base="Panini" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="98" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Panini Thon Fromage</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">6</span></div></div> </div>
+</div>
+</div>
+<div class="dish-line dis has-price" data-description="" data-id="32722602" data-name="Panini Spécial(Thon, Jambon)" data-name-base="Panini Spécial(Thon, Jambon)" data-origin="" data-price="7.0" data-section-sorting="17" data-separator-level1="Panini" data-separator-level1-base="Panini" data-separator-level2="" data-separator-level2-base="" data-separator-level3="" data-separator-level3-base="" data-sorting="99" data-variants="" data-variants-base="" data-vintage="" data-winery="">
+<div class="dish-wrapper">
+<div class="dish-inner">
+<div class="dish">
+<div class="dish-item">
+<span class="dish-name dis"><span class="primary-language">Panini Spécial(Thon, Jambon)</span></span> </div>
+</div>
+<div class="price short-variant-name"><div class="variant short-variant has-price"><span class="variant-price">7</span></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- close main container-->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+<script>// 1. String.prototype.trim polyfill
+if (!"".trim) String.prototype.trim = function () {
+  return this.replace(/^[\s﻿]+|[\s﻿]+$/g, '');
+};
+(function (window) {
+  "use strict"; // prevent global namespace pollution
+  if (!window.DOMException)(DOMException = function (reason) {
+    this.message = reason
+  }).prototype = new Error;
+  var wsRE = /[\11\12\14\15\40]/,
+    wsIndex = 0,
+    checkIfValidClassListEntry = function (O, V) {
+      if (V === "") throw new DOMException(
+        "Failed to execute '" + O + "' on 'DOMTokenList': The token provided must not be empty.");
+      if ((wsIndex = V.search(wsRE)) !== -1) throw new DOMException("Failed to execute '" + O + "' on 'DOMTokenList': " +
+        "The token provided ('" + V[wsIndex] + "') contains HTML space characters, which are not valid in tokens.");
+    }
+  // 2. Implement the barebones DOMTokenList livelyness polyfill
+  if (typeof DOMTokenList !== "function")(function (window) {
+    var document = window.document,
+      Object = window.Object,
+      hasOwnProp = Object.prototype.hasOwnProperty;
+    var defineProperty = Object.defineProperty,
+      allowTokenListConstruction = 0,
+      skipPropChange = 0;
+
+    function DOMTokenList() {
+      if (!allowTokenListConstruction) throw TypeError("Illegal constructor"); // internally let it through
+    }
+    DOMTokenList.prototype.toString = DOMTokenList.prototype.toLocaleString = function () {
+      return this.value
+    };
+    DOMTokenList.prototype.add = function () {
+      a: for (var v = 0, argLen = arguments.length, val = "", ele = this[" uCL"], proto = ele[" uCLp"]; v !== argLen; ++v) {
+        val = arguments[v] + "", checkIfValidClassListEntry("add", val);
+        for (var i = 0, Len = proto.length, resStr = val; i !== Len; ++i)
+          if (this[i] === val) continue a;
+          else resStr += " " + this[i];
+        this[Len] = val, proto.length += 1, proto.value = resStr;
+      }
+      skipPropChange = 1,
+      ele.className = proto.value,
+      skipPropChange = 0;
+    };
+    DOMTokenList.prototype.remove = function () {
+      for (var v = 0, argLen = arguments.length, val = "", ele = this[" uCL"], proto = ele[" uCLp"]; v !== argLen; ++v) {
+        val = arguments[v] + "", checkIfValidClassListEntry("remove", val);
+        for (var i = 0, Len = proto.length, resStr = "", is = 0; i !== Len; ++i)
+          if (is) {
+            this[i - 1] = this[i]
+          } else {
+            if (this[i] !== val) {
+              resStr += this[i] + " ";
+            } else {
+              is = 1;
+            }
+          }
+        if (!is) continue;
+        delete this[Len], proto.length -= 1, proto.value = resStr;
+      }
+      skipPropChange = 1, ele.className = proto.value, skipPropChange = 0;
+    };
+    window.DOMTokenList = DOMTokenList;
+
+    function whenPropChanges() {
+      var evt = window.event,
+        prop = evt.propertyName;
+      if (!skipPropChange && (prop === "className" || (prop === "classList" && !defineProperty))) {
+        var target = evt.srcElement,
+          protoObjProto = target[" uCLp"],
+          strval = "" + target[prop];
+        var tokens = strval.trim().split(wsRE),
+          resTokenList = target[prop === "classList" ? " uCL" : "classList"];
+        var oldLen = protoObjProto.length;
+        a: for (var cI = 0, cLen = protoObjProto.length = tokens.length, sub = 0; cI !== cLen; ++cI) {
+          for (var innerI = 0; innerI !== cI; ++innerI)
+            if (tokens[innerI] === tokens[cI]) {
+              sub++;
+              continue a;
+            }
+          resTokenList[cI - sub] = tokens[cI];
+        }
+        for (var i = cLen - sub; i < oldLen; ++i) delete resTokenList[i]; //remove trailing indexs
+        if (prop !== "classList") return;
+        skipPropChange = 1, target.classList = resTokenList, target.className = strval;
+        skipPropChange = 0, resTokenList.length = tokens.length - sub;
+      }
+    }
+
+    function polyfillClassList(ele) {
+      if (!ele || !("innerHTML" in ele)) throw TypeError("Illegal invocation");
+      ele.detachEvent("onpropertychange", whenPropChanges); // prevent duplicate handler infinite loop
+      allowTokenListConstruction = 1;
+      try {
+        function protoObj() {}
+        protoObj.prototype = new DOMTokenList();
+      } finally {
+        allowTokenListConstruction = 0
+      }
+      var protoObjProto = protoObj.prototype,
+        resTokenList = new protoObj();
+      a: for (var toks = ele.className.trim().split(wsRE), cI = 0, cLen = toks.length, sub = 0; cI !== cLen; ++cI) {
+        for (var innerI = 0; innerI !== cI; ++innerI)
+          if (toks[innerI] === toks[cI]) {
+            sub++;
+            continue a;
+          }
+        this[cI - sub] = toks[cI];
+      }
+      protoObjProto.length = cLen - sub, protoObjProto.value = ele.className, protoObjProto[" uCL"] = ele;
+      if (defineProperty) {
+        defineProperty(ele, "classList", { // IE8 & IE9 allow defineProperty on the DOM
+          enumerable: 1,
+          get: function () {
+            return resTokenList
+          },
+          configurable: 0,
+          set: function (newVal) {
+            skipPropChange = 1, ele.className = protoObjProto.value = (newVal += ""), skipPropChange = 0;
+            var toks = newVal.trim().split(wsRE),
+              oldLen = protoObjProto.length;
+            a: for (var cI = 0, cLen = protoObjProto.length = toks.length, sub = 0; cI !== cLen; ++cI) {
+              for (var innerI = 0; innerI !== cI; ++innerI)
+                if (toks[innerI] === toks[cI]) {
+                  sub++;
+                  continue a;
+                }
+              resTokenList[cI - sub] = toks[cI];
+            }
+            for (var i = cLen - sub; i < oldLen; ++i) delete resTokenList[i]; //remove trailing indexs
+          }
+        });
+        defineProperty(ele, " uCLp", { // for accessing the hidden prototype
+          enumerable: 0,
+          configurable: 0,
+          writeable: 0,
+          value: protoObj.prototype
+        });
+        defineProperty(protoObjProto, " uCL", {
+          enumerable: 0,
+          configurable: 0,
+          writeable: 0,
+          value: ele
+        });
+      } else {
+        ele.classList = resTokenList, ele[" uCL"] = resTokenList, ele[" uCLp"] = protoObj.prototype;
+      }
+      ele.attachEvent("onpropertychange", whenPropChanges);
+    }
+    try { // Much faster & cleaner version for IE8 & IE9:
+      // Should work in IE8 because Element.prototype instanceof Node is true according to the specs
+      window.Object.defineProperty(window.Element.prototype, "classList", {
+        enumerable: 1,
+        get: function (val) {
+          if (!hasOwnProp.call(this, "classList")) polyfillClassList(this);
+          return this.classList;
+        },
+        configurable: 0,
+        set: function (val) {
+          this.className = val
+        }
+      });
+    } catch (e) { // Less performant fallback for older browsers (IE 6-8):
+      window[" uCL"] = polyfillClassList;
+      // the below code ensures polyfillClassList is applied to all current and future elements in the doc.
+      document.documentElement.firstChild.appendChild(document.createElement('style')).styleSheet.cssText = (
+        '_*{x-uCLp:expression(!this.hasOwnProperty("classList")&&window[" uCL"](this))}' + //  IE6
+        '[class]{x-uCLp/**/:expression(!this.hasOwnProperty("classList")&&window[" uCL"](this))}' //IE7-8
+      );
+    }
+  })(window);
+  // 3. Patch in unsupported methods in DOMTokenList
+  (function (DOMTokenListProto, testClass) {
+    if (!DOMTokenListProto.item) DOMTokenListProto.item = function (i) {
+      function NullCheck(n) {
+        return n === void 0 ? null : n
+      }
+      return NullCheck(this[i]);
+    };
+    if (!DOMTokenListProto.toggle || testClass.toggle("a", 0) !== false) DOMTokenListProto.toggle = function (val) {
+      if (arguments.length > 1) return (this[arguments[1] ? "add" : "remove"](val), !!arguments[1]);
+      var oldValue = this.value;
+      return (this.remove(oldValue), oldValue === this.value && (this.add(val), true) /*|| false*/ );
+    };
+    if (!DOMTokenListProto.replace || typeof testClass.replace("a", "b") !== "boolean")
+      DOMTokenListProto.replace = function (oldToken, newToken) {
+        checkIfValidClassListEntry("replace", oldToken), checkIfValidClassListEntry("replace", newToken);
+        var oldValue = this.value;
+        return (this.remove(oldToken), this.value !== oldValue && (this.add(newToken), true));
+      };
+    if (!DOMTokenListProto.contains) DOMTokenListProto.contains = function (value) {
+      for (var i = 0, Len = this.length; i !== Len; ++i)
+        if (this[i] === value) return true;
+      return false;
+    };
+    if (!DOMTokenListProto.forEach) DOMTokenListProto.forEach = function (f) {
+      if (arguments.length === 1)
+        for (var i = 0, Len = this.length; i !== Len; ++i) f(this[i], i, this);
+      else
+        for (var i = 0, Len = this.length, tArg = arguments[1]; i !== Len; ++i) f.call(tArg, this[i], i, this);
+    };
+    if (!DOMTokenListProto.entries) DOMTokenListProto.entries = function () {
+      var nextIndex = 0,
+        that = this;
+      return {
+        next: function () {
+          return nextIndex < that.length ? {
+            value: [nextIndex, that[nextIndex++]],
+            done: false
+          } : {
+            done: true
+          };
+        }
+      };
+    };
+    if (!DOMTokenListProto.values) DOMTokenListProto.values = function () {
+      var nextIndex = 0,
+        that = this;
+      return {
+        next: function () {
+          return nextIndex < that.length ? {
+            value: that[nextIndex++],
+            done: false
+          } : {
+            done: true
+          };
+        }
+      };
+    };
+    if (!DOMTokenListProto.keys) DOMTokenListProto.keys = function () {
+      var nextIndex = 0,
+        that = this;
+      return {
+        next: function () {
+          return nextIndex < that.length ? {
+            value: nextIndex++,
+            done: false
+          } : {
+            done: true
+          };
+        }
+      };
+    };
+  })(window.DOMTokenList.prototype, window.document.createElement("div").classList);
+})(window);</script>
+<script>(function (win, doc) {
+  if (win.addEventListener) return; //No need to polyfill
+
+  function docHijack(p) {
+    var old = doc[p];
+    doc[p] = function (v) {
+      return addListen(old(v))
+    }
+  }
+
+  function addEvent(on, fn, self) {
+    return (self = this).attachEvent('on' + on, function (e) {
+      var e = e || win.event;
+      e.preventDefault = e.preventDefault || function () {
+        e.returnValue = false
+      }
+      e.stopPropagation = e.stopPropagation || function () {
+        e.cancelBubble = true
+      }
+      fn.call(self, e);
+    });
+  }
+
+  function addListen(obj, i) {
+    if (i = obj.length)
+      while (i--) obj[i].addEventListener = addEvent;
+    else obj.addEventListener = addEvent;
+    return obj;
+  }
+
+  addListen([doc, win]);
+  if ('Element' in win) win.Element.prototype.addEventListener = addEvent; //IE8
+  else { //IE < 8
+    doc.attachEvent('onreadystatechange', function () {
+      addListen(doc.all)
+    }); //Make sure we also init at domReady
+    docHijack('getElementsByTagName');
+    docHijack('getElementById');
+    docHijack('createElement');
+    addListen(doc.all);
+  }
+})(window, document);</script>
+<script>/**
+ * Filters the menu with the provided value
+ * @param {Fuse} fuse fuzzy-search object for regular searches
+ * @param {Fuse} fuseInt fuzzy-search object for integer searches
+ * @param {Element} container DOM container with menu items
+ * @param {Array<Element>} matches Matched DOM elements
+ * @param {string} value search value
+ */
+const closedSections = [];
+const filterElements = (fuse, fuseInt, container, matches, value) => {
+  // reset section display
+  Array.from(container.querySelectorAll('[data-toggle="collapsible"')).forEach(sec => {
+    sec.removeAttribute('data-search');
+  });
+  Array.from(container.querySelectorAll('[data-show="false"]')).forEach(cont => {
+    cont.style.height = null;
+    cont.style.margin = null;
+    cont.setAttribute('data-show', true);
+    cont.setAttribute('data-toggled', true);
+    closedSections.push(cont);
+  });
+
+  // initalise search - add ' to force the value being included
+  container.classList.add('search');
+  let result = [];
+  if (parseInt(value) && parseInt(value) > 0) {
+    result = fuseInt.search(`'${parseInt(value)}`);
+  } else {
+    let split_string = value.split(' ');
+    split_string = split_string.map(val => {
+      return '\'' + val
+    });
+    value = split_string.join(' ');
+    result = fuse.search(value);
+  }
+  const indices = result.map(i => {
+    return i.refIndex;
+  });
+  matches.forEach((m, idx) => {
+
+    // conditionally show the dish-line and corresponding section titles
+    if (!indices.includes(idx)) {
+      m.style.display = 'none';
+    } else {
+      m.style.display = null;
+
+      // set visibility of the parent element and the chain of preceding sections
+      const parent = m.parentElement;
+      if (parent) {
+        parent.setAttribute('data-show', true);
+        parent.previousElementSibling.setAttribute('data-search', true);
+        if (parent.previousElementSibling.classList.contains('level-3')) {
+          const sibling = getPreviousSibling(parent.previousElementSibling, '.level-2');
+          if (sibling) {
+            sibling.setAttribute('data-search', true);
+            const elderSibling = getPreviousSibling(sibling, '.level-1');
+            if (elderSibling) {
+              elderSibling.setAttribute('data-search', true);
+            }
+          }
+        } else if (parent.previousElementSibling.classList.contains('level-2')) {
+          const sibling = getPreviousSibling(parent.previousElementSibling, '.level-1');
+          if (sibling) {
+            sibling.setAttribute('data-search', true);
+          }
+        }
+      }
+    }
+  });
+};
+
+/**
+ * Shows all items of the menu again
+ * @param {Element} container DOM container with menu items
+ * @param {Array<Element>} matches Matched DOM elements
+ */
+const showAllElements = (container, matches) => {
+  container.classList.remove('search');
+  matches.forEach(m => {
+    m.style.display = null;
+  });
+  closedSections.forEach((sec) => {
+    sec.setAttribute('data-show', false);
+    sec.setAttribute('data-toggled', false);
+    sec.style.height = 0;
+    sec.style.margin = 0;
+  });
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector("#items");
+  const matches = Array.from(container.querySelectorAll("[data-id]"));
+  const list = matches.map(i => {
+    return {
+      id: i.getAttribute('data-id'),
+      name: i.getAttribute('data-name'),
+      origin: i.getAttribute('data-origin'),
+      vintage: i.getAttribute('data-vintage'),
+      winery: i.getAttribute('data-winery'),
+      description: i.getAttribute('data-description'),
+      number: i.getAttribute('data-number'),
+    }
+  });
+
+  const options = {
+    shouldSort: false,
+    includeScore: true,
+    findAllMatches: true,
+    threshold: 0.5,
+    keys: ['name', 'origin', {
+      name: 'vintage',
+      weight: 0.2
+    }, 'winery', {
+      name: 'description',
+      weight: 0.2
+    }]
+  }
+  const fuse = new Fuse(list, options);
+  const fuseInt = new Fuse(list, {
+    shouldSort: false,
+    findAllMatches: true,
+    threshold: 0.2,
+    distance: 0,
+    keys: ['vintage', 'number']
+  });
+
+  /**
+   * Input listener
+   */
+  function onInput() {
+    const duration = 1000;
+    clearTimeout(inputElm._timer);
+    inputElm._timer = setTimeout(() => {
+
+      if (this.value.length > 2) {
+        filterElements(fuse, fuseInt, container, matches, this.value);
+      } else if (!this.value) {
+        showAllElements(container, matches);
+      }
+
+    }, duration);
+  }
+
+  /**
+   * Handler for input actions
+   * @param {Event} ev 
+   */
+  const searchHandler = (ev) => {
+    const searchContainer = ev.target.closest('.searchInputContainer');
+    const action = searchContainer.classList.toggle('open');
+    searchContainer.parentElement.classList.toggle('search-open');
+    inputElm.focus();
+    if (!action) {
+      if (inputElm.value) {
+        inputElm.value = '';
+        const event = new Event('input', {
+          bubbles: true,
+          cancelable: true,
+        });
+        inputElm.dispatchEvent(event);
+      }
+    }
+    ev.preventDefault();
+  }
+
+  const inputElm = document.querySelector('#menuSearch');
+  const searchButton = document.querySelector('.search-button');
+
+  // clear search on page load
+  inputElm.value = '';
+
+  // event listeners
+  searchButton.addEventListener('click', searchHandler);
+  inputElm.addEventListener('input', onInput);
+});</script>
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+<script type="text/javascript">
+      const lightbox = GLightbox({
+        selector: '*[data-fslightbox]',
+        touchNavigation: false,
+        keyboardNavigation: false,
+        draggable: false,
+        zoomable: false,
+      });
+    </script>
+<script>(function () {
+  const MIN_MENU_LENGTH = 2;
+  
+  function collapseSection(element) {
+    var sectionHeight = element.scrollHeight;
+  
+    // temporarily disable all css transitions
+    var elementTransition = element.style.transition;
+    element.style.transition = '';
+  
+    // on the next frame
+    requestAnimationFrame(function () {
+      element.style.height = sectionHeight + 'px';
+      element.style.transition = elementTransition;
+  
+      // on the next frame
+      requestAnimationFrame(function () {
+        element.style.height = 0 + 'px';
+        element.style.margin = 0 + 'px';
+      });
+    });
+    element.setAttribute('data-show', 'false');
+  }
+  
+  function expandSection(element) {
+    // add timeout to counter Safari issues
+    setTimeout(function () {
+      var sectionHeight = element.scrollHeight;
+      element.style.height = sectionHeight + 'px';
+      element.style.margin = null;
+  
+      const section = getPreviousSibling(element, '[data-toggle="collapsible"]')
+      doScrolling(section, 500);
+    }, 50);
+  
+    // after the css transition finishes
+    element.addEventListener('transitionend', function (e) {
+      element.removeEventListener('transitionend', arguments.callee);
+      element.style.height = null;
+  
+      const section = getPreviousSibling(element, '[data-toggle="collapsible"]');
+      doScrolling(section, 500);
+    });
+    element.setAttribute('data-show', 'true');
+  }
+  
+  function hasClass(elem, cls) {
+    var str = " " + elem.className + " ";
+    var testCls = " " + cls + " ";
+    return (str.indexOf(testCls) != -1);
+  }
+  
+  function nextByClass(node, cls) {
+    while (node = node.nextSibling) {
+      if (hasClass(node, cls)) {
+        return node;
+      }
+    }
+    return null;
+  }
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const targets = Array.from(document.querySelectorAll('[data-show]'));
+    if (targets.length >= MIN_MENU_LENGTH) {
+  
+      // tracking for last click sovles ghost click issues
+      let lastClick = 0;
+      const delay = 500;
+  
+      // add event listeners for headers
+      const collapseHeaders = Array.from(document.querySelectorAll('[data-toggle="collapsible"]'));
+      collapseHeaders.forEach(header => {
+        var hammertime = new Hammer(header);
+        hammertime.on('tap', function (ev) {
+          const link = ev.srcEvent.target.closest('a');
+          if (link && link.classList.contains('dialog-icon')) return;
+          if (Date.now() - lastClick < delay) return;
+          lastClick = Date.now();
+          toggleSection(ev);
+        });
+      });
+  
+      /**
+       * Toggle section event
+       * @param {Event} ev 
+       */
+      const toggleSection = (ev) => {
+        const items = document.getElementById('items');
+        if (items && items.classList.contains('search')) return;
+        const elm = ev.srcEvent.target.closest('[data-toggle="collapsible"]');
+        if (elm) {
+          const selector = elm.getAttribute('data-target');
+          const node = nextByClass(elm, selector);
+          if (node) {
+            if (node.getAttribute('data-show') === 'true') {
+              collapseSection(node);
+              elm.setAttribute('data-toggled', 'false')
+            } else {
+              // collapse others
+              const otherTargets = Array.from(document.querySelectorAll('[data-toggled="true"]'));
+              otherTargets.filter(v => parseInt(v.getAttribute('data-level')) >= parseInt(elm.getAttribute('data-level'))).forEach(target => {
+                const targetNode = nextByClass(target, target.getAttribute('data-target'));
+                const elementTransition = targetNode.style.transition;
+                targetNode.style.transition = '';
+                targetNode.style.height = 0 + 'px';
+                targetNode.style.margin = 0 + 'px';
+                requestAnimationFrame(function () {
+                  targetNode.style.transition = elementTransition;
+                });
+                targetNode.setAttribute('data-show', 'false');
+                target.setAttribute('data-toggled', 'false')
+              });
+              // expand the selected section
+              expandSection(node);
+              elm.setAttribute('data-toggled', 'true');
+            }
+          }
+        }
+        ev.preventDefault();
+      }
+  
+      // scroll to view feature
+      const urlParams = new URLSearchParams(document.location.search);
+      if (urlParams.get('scroll')) {
+        const element = document.querySelector(`[data-section-baselang="${urlParams.get('scroll')}"]`);
+        if (element && element.getAttribute('data-toggled') === 'false') {
+          const selector = element.getAttribute('data-target');
+          const node = nextByClass(element, selector);
+          expandSection(node);
+          element.setAttribute('data-toggled', 'true');
+  
+          const defaultOpen = document.querySelector('[data-toggled="true"]');
+          if (defaultOpen && defaultOpen.getAttribute('data-toggled') === 'true') {
+            const defaultSelector = defaultOpen.getAttribute('data-target');
+            const defaultNode = nextByClass(defaultOpen, defaultSelector);
+            collapseSection(defaultNode);
+            defaultOpen.setAttribute('data-toggled', 'false')
+          }
+        } else if (element) {
+          window.setTimeout(() => doScrolling(element, 500), 100);
+        }
+      }
+  
+      // close all collapsibles by default
+      targets.forEach(target => {
+        if (target.getAttribute('data-show') == 'false') {
+          target.style.height = 0;
+          target.style.margin = 0;
+        }
+      });
+    } else {
+      const toggles = Array.from(document.querySelectorAll('.section-line[data-toggled]'));
+      toggles.forEach(el => {
+        el.classList.add('no-toggle');
+      });
+    }
+  });
+})();</script>
+</div>
+<script>
+    // The page is in an iframe
+    if (window.self !== window.top) {
+        const TOP_OFFSET = 25;
+        var overlay;
+        var slides;
+        var parentHeight, scrollPosition;
+
+        window.addEventListener('message', function(event) {
+          if (event.data[0] === 'setParentHeight') {
+            parentHeight = event.data[1] - 2*TOP_OFFSET;
+            if (overlay) overlay.style.height = parentHeight + 'px';
+            if (slides) {
+              slides.forEach(function(slide) {
+                slide.style.maxHeight = parentHeight * 0.97 + 'px';
+            });
+            }
+          } else if (event.data[0] === 'setScrollPosition') {
+            scrollPosition = event.data[1] + TOP_OFFSET;
+            if (overlay) overlay.style.top = scrollPosition + 'px';
+          }
+        }, false);
+
+        // Create a mutation observer instance to watch when the overlay gets added to the DOM
+        var observer = new MutationObserver(function(mutations) {
+          overlay = document.querySelector('.glightbox-container');
+          slides = document.querySelectorAll('.gslide-image img');
+          if (overlay) {
+            overlay.style.height = parentHeight + 'px';
+            overlay.style.top = scrollPosition + 'px';
+          }
+          if (slides) {
+            slides.forEach(function(slide) {
+                slide.style.maxHeight = parentHeight * 0.97 + 'px';
+            });
+          }
+        });
+
+        // Start observing the document with the configured parameters
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        window.onload = function() {
+          var height = document.body.offsetHeight;
+          window.parent.postMessage(['setIframeHeight', height], '*');
+          // request new height and position
+          window.parent.postMessage(['requestHeightPosition'], '*');
+        };
+    } 
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script>
+/**
+ * Queries the previous element with a specific selector
+ * @param {Element} elem a given DOM element
+ * @param {string} selector selector value for the query
+ */
+const getPreviousSibling = (elem, selector) => {
+  var sibling = elem.previousElementSibling;
+  if (!selector) return sibling;
+  while (sibling) {
+    if (sibling.matches(selector)) return sibling;
+    sibling = sibling.previousElementSibling;
+  }
+};
+
+function doScrolling(element, duration) {
+  var startingY = window.pageYOffset
+  var elementY = window.pageYOffset + element.getBoundingClientRect().top - 60
+  // If element is close to page's bottom then window will scroll only to some position above the element
+  var targetY = document.body.scrollHeight - elementY < window.innerHeight ? document.body.scrollHeight - window.innerHeight : elementY
+  var diff = targetY - startingY
+  // Easing function: easeInOutCubic
+  // From: https://gist.github.com/gre/1650294
+  var easing = function (t) {
+    return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+  }
+  var start
+  if (!diff) return
+  window.requestAnimationFrame(function step(timestamp) {
+    if (!start) start = timestamp
+    var time = timestamp - start
+    var percent = Math.min(time / duration, 1)
+    percent = easing(percent)
+    window.scrollTo(0, startingY + diff * percent)
+    if (time < duration) {
+      window.requestAnimationFrame(step)
+    }
+  })
+}</script>
+<script>
+var rootRules;
+
+function getAllCSSVariableNames(styleSheets = document.styleSheets) {
+  var cssVars = [];
+  for (var i = 0; i < styleSheets.length; i++) {
+    try {
+      for (var j = 0; j < styleSheets[i].cssRules.length; j++) {
+        try {
+          for (var k = 0; k < styleSheets[i].cssRules[j].style.length; k++) {
+            let name = styleSheets[i].cssRules[j].style[k];
+            if (name.startsWith('--') && cssVars.indexOf(name) == -1) {
+              cssVars.push(name);
+            }
+          }
+        } catch (error) {}
+      }
+    } catch (error) {}
+  }
+  return cssVars;
+}
+
+function getElementCSSVariables(allCSSVars, element = document.body, pseudo) {
+  var elStyles = window.getComputedStyle(element, pseudo);
+  var cssVars = {};
+  for (var i = 0; i < allCSSVars.length; i++) {
+    let key = allCSSVars[i];
+    let value = elStyles.getPropertyValue(key)
+    if (value) {
+      cssVars[key] = value;
+    }
+  }
+  return cssVars;
+}
+
+function calculateSizeValue(value, factor, lineHeight = false) {
+  let maxValue = Math.min(value * factor, lineHeight ? 36 : 32);
+  if (maxValue < value) maxValue = value;
+  return (maxValue * 4 / 3).toFixed(1);
+}
+
+function changeTextSize(magnification = 1) {
+  let root = document.documentElement;
+  for (let [key, value] of Object.entries(rootRules)) {
+    const localMagnification = key.startsWith('--size-mtheader') ? magnification - (magnification - 1) * 0.5 : magnification;
+    const size = parseInt(value.substring(0, value.length - 2));
+    if (key.startsWith('--size')) {
+      root.style.setProperty(key, calculateSizeValue(size, localMagnification) + "px");
+    } else if (key.startsWith('--line-height')) {
+      root.style.setProperty(key, calculateSizeValue(size, localMagnification, true) + "px");
+    }
+  }
+  updateURLParam('size', magnification * 100, false);
+  if (window.event.target != document) {
+    var el = window.event.target;
+    var par = el.parentNode;
+    var next = el.nextSibling;
+    par.removeChild(el);
+    setTimeout(function () {
+      par.insertBefore(el, next);
+    }, 0)
+  }
+}
+
+var setSizeFromParams = function (url) {
+  var params = [];
+  var parser = document.createElement('a');
+  parser.href = url;
+  var query = parser.search.substring(1);
+  var vars = query.split('&');
+  const sizers = Array.from(document.querySelectorAll(".mt-size"));
+  let sizeSet = false;
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split('=');
+    if (pair[0] == 'size' && [100, 150, 200].includes(parseInt(decodeURIComponent(pair[1])))) {
+      sizeSet = true;
+      changeTextSize(parseInt(decodeURIComponent(pair[1])) / 100);
+      switch (parseInt(decodeURIComponent(pair[1]))) {
+        case 100:
+          sizers[0].classList.add('active');
+          break;
+        case 150:
+          sizers[1].classList.add('active');
+          break;
+        case 200:
+          sizers[2].classList.add('active');
+          break;
+      }
+    }
+  }
+  if (!sizeSet) {
+    sizers[0].classList.add('active');
+  }
+  return params;
+};
+
+var getHighlightParams = function (url) {
+  var params = [];
+  var parser = document.createElement('a');
+  parser.href = url;
+  var query = parser.search.substring(1);
+  var vars = query.split('&');
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split('=');
+    if (pair[0] == 'highlight') params.push(decodeURIComponent(pair[1]));
+  }
+  return params;
+};
+
+var getOptionalInformationParams = function (url) {
+  var params = [];
+  var parser = document.createElement('a');
+  parser.href = url;
+  var query = parser.search.substring(1);
+  var vars = query.split('&');
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split('=');
+    if (pair[1] == 'true') params.push(decodeURIComponent(pair[0]));
+  }
+  return params;
+};
+
+function updateURLParam(key, value, redirect = true) {
+  key = encodeURI(key);
+  value = encodeURI(value);
+  var kvp = document.location.search.substring(1).split('&');
+  var i = kvp.length;
+  var x;
+  while (i--) {
+    x = kvp[i].split('=');
+    if (x[0] == key) {
+      x[1] = value;
+      kvp[i] = x.join('=');
+      break;
+    }
+  }
+  if (i < 0) kvp[kvp.length] = [key, value].join('=');
+  if (redirect) {
+    document.location.search = kvp.join('&');
+  } else {
+    window.history.replaceState(null, null, '?' + kvp.join('&'));
+  }
+}
+
+/**
+ * Toggles URL parameter in the URL and returns the new URL
+ * @param {string} key query param to be toggled in the URL
+ * @param {*} value query param value to be toggled in the URL
+ * @returns URL string including the toggled query parameters
+ */
+function toggleURLParam(key, value) {
+  key = encodeURI(key);
+  value = encodeURI(value);
+  const params = new URLSearchParams(window.location.search)
+  let url = window.location.href.split('?')[0];
+  let paramValues = params.getAll(key);
+  params.delete(key);
+  if (paramValues.includes(value)) {
+    paramValues.filter((p) => p !== value).forEach((p) => {
+      params.append(key, p);
+    });
+  } else {
+    paramValues.push(value);
+    paramValues.forEach((p) => {
+      params.append(key, p);
+    });
+  }
+  if (params.toString()) {
+    url += ('?' + params.toString());
+  }
+  return url;
+}
+
+function setAnchorLinks() {
+  const params = getHighlightParams(window.location.href);
+  const elements = Array.from(document.querySelectorAll(".mt-highlight"));
+  elements.forEach(el => {
+    if (params.includes(el.dataset.highlight)) el.classList.add('active');
+    el.href = toggleURLParam('highlight', el.dataset.highlight);
+  });
+}
+
+function setOptionalInformationRedirects() {
+  const params = getOptionalInformationParams(window.location.href);
+  const elements = Array.from(document.querySelectorAll(".mt-optional"));
+  elements.forEach(el => {
+    if (params.includes(el.dataset.optional)) el.classList.add('active');
+    el.href = toggleURLParam(el.dataset.optional, true);
+  });
+}
+
+function enableSecondaryNavigation() {
+  var button = document.getElementById('slide');
+  button.onclick = function () {
+    var container = document.getElementById('navigation-secondary-links');
+    sideScroll(container, 'right', 25, 100, 10);
+  };
+
+  var back = document.getElementById('slideBack');
+  back.onclick = function () {
+    var container = document.getElementById('navigation-secondary-links');
+    sideScroll(container, 'left', 25, 100, 10);
+  };
+
+  function sideScroll(element, direction, speed, distance, step) {
+    scrollAmount = 0;
+    var slideTimer = setInterval(function () {
+      if (direction == 'left') {
+        element.scrollLeft -= step;
+      } else {
+        element.scrollLeft += step;
+      }
+      scrollAmount += step;
+      if (scrollAmount >= distance) {
+        window.clearInterval(slideTimer);
+      }
+    }, speed);
+  }
+}
+
+document.addEventListener("touchstart", function () {
+  // TODO: close operators if the operator is not a parent of where the touch happened
+}, true);
+
+document.addEventListener('DOMContentLoaded', function () {
+  var cssVars = getAllCSSVariableNames();
+  rootRules = getElementCSSVariables(cssVars, document.documentElement);
+
+  setSizeFromParams(window.location.href);
+  setAnchorLinks();
+  setOptionalInformationRedirects();
+
+  const sizers = Array.from(document.querySelectorAll(".mt-size"));
+  sizers.forEach(el => {
+    var hammer = new Hammer(el);
+    hammer.on('tap', function (ev) {
+      sizers.forEach(otherEl => {
+        if (otherEl !== el) otherEl.classList.remove('active');
+      });
+      el.classList.add('active');
+      changeTextSize(parseFloat(el.getAttribute('data-size')));
+      setAnchorLinks();
+      setOptionalInformationRedirects();
+    });
+  });
+
+  document.onkeydown = function (evt) {
+    evt = evt || window.event;
+    var isEscape = false;
+    if ("key" in evt) {
+      isEscape = (evt.key === "Escape" || evt.key === "Esc");
+    } else {
+      isEscape = (evt.keyCode === 27);
+    }
+    if (isEscape && document.activeElement) {
+      document.activeElement.blur();
+    }
+  };
+
+  const secondaryNav = document.getElementById('navigation-secondary');
+  if (secondaryNav) {
+    enableSecondaryNavigation();
+  }
+
+  // ensure lightbox is set to image mode
+  // fsLightbox.props.type = "image";
+});</script>
+<script>
+const triggers = Array.from(document.querySelectorAll('[data-toggle="legend"]'));
+const fnmap = {
+  'toggle': 'toggle',
+  'show': 'add',
+  'hide': 'remove'
+};
+
+const collapse = (selector, cmd, trigger = null, className = 'show') => {
+  const targets = Array.from(document.querySelectorAll(selector));
+  targets.forEach(target => {
+    target.classList[fnmap[cmd]](className);
+  });
+  if (trigger) trigger.classList[fnmap[cmd]](className);
+}
+
+const toggleLegend = (ev) => {
+  ev.preventDefault();
+  const elm = ev.target;
+  const node = elm.closest('[data-toggle="legend"]');
+  if (triggers.includes(node)) {
+    const selector = elm.getAttribute('data-target');
+    collapse(selector, 'toggle', node);
+  }
+}
+
+let lastClick = 0;
+const delay = 500;
+
+function togglerFn(ev) {
+  if (Date.now() - lastClick < delay) return;
+  lastClick = Date.now();
+  toggleLegend(ev);
+  collapse('body', 'toggle', null, 'noscroll');
+
+  if (document.querySelector('.secondary')) {
+    setTimeout(function () {
+      if ((document.querySelector('.secondary').offsetHeight / window.innerHeight) < 0.7) {
+        document.querySelector('body').classList.remove('noscroll');
+      }
+    }, 1000);
+  }
+}
+
+const toggler_list = Array.from(document.querySelectorAll('[data-toggle="legend"]'));
+if (toggler_list) {
+  toggler_list.forEach((toggler) => {
+    toggler.addEventListener('click', togglerFn);
+  });
+}</script>
+<div id="end"></div>
+</body>
+</html>
