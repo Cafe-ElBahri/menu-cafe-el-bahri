@@ -36,26 +36,6 @@
          background-attachment: scroll;
 
       }
-  :root {
-  --fluid-scale: clamp(0.85, 1vw + 0.8, 1.15);
-}
-
-/* Typography – scales on all screens */
-body {
-  font-size: calc(16px * var(--fluid-scale));
-}
-
-h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
-h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); }
-h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
-p  { font-size: clamp(0.95rem, 1.2vw, 1.1rem); }
-  body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
-}
 @keyframes fadein {
   from {
     opacity: 0;
@@ -4077,6 +4057,7 @@ if (toggler_list) {
 <div id="end"></div>
 </body>
 </html>
+
 
 
 
