@@ -29,14 +29,40 @@
     font-style: normal
   }
 </style> <style>
-      body {
-        background-image: url("bg.png");
-        background-size: cover;    /* image couvre tout l'écran */
-        background-repeat: no-repeat;  /* pas de répétition */
-       background-position: center center;   
-        background-color: var(--color-page);
-        min-height: 100vh;
-      }
+   body {
+  min-height: 100vh;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+    url("p1.png"),
+    url("p2.png"),
+    url("p3.png"),
+    url("p4.png")
+    ;
+
+  background-size:
+    cover,      /* pour le gradient */
+    60px 60px,  /* p1 */
+    60px 60px,  /* p2 */
+    60px 60px,  /* p3 */
+    60px 60px;  /* p4 */
+
+  background-repeat:
+    no-repeat,  /* gradient */
+    repeat,     /* p1 */
+    repeat,     /* p2 */
+    repeat,     /* p3 */
+    repeat;     /* p4 */
+
+  background-position:
+    center,
+    top left,
+    top right,
+    bottom left,
+    bottom right;
+
+}
+      
 :root {
   --fluid-scale: clamp(0.85, 1vw + 0.8, 1.15);
 }
@@ -4067,6 +4093,8 @@ if (toggler_list) {
   toggler_list.forEach((toggler) => {
     toggler.addEventListener('click', togglerFn);
   });
+
+
 }</script>
 <div id="end"></div>
 </body>
